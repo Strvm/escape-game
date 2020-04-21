@@ -1,8 +1,13 @@
-
+"use strict" //Use strict to not pullute global variables
+{
 const rooms = document.getElementById("rooms").querySelectorAll(".room"); //Div containing all rooms in the game.
 let currentRoom = 'room level-1' //Default starting level name.
 let currentLevel = document.querySelector(`.level-${getRoomId(currentRoom)}`); //Section of the current level
 
+//Assigning all the functions to the ESCAPE_ROOM object.
+Object.assign(ESCAPE_ROOM, {
+    rooms,throwError ,currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid
+  });
 
 /*
     getNextRoom function. Returns the level name of the next room of the given room put in parameter.
@@ -13,7 +18,7 @@ function getNextRoom(roomName){
     const roomID = getRoomId(roomName) + 1;
 
     if(roomID == null){
-        console.log('Given room ID doesn\'t exist.');
+        throwError('Given room ID doesn\'t exist.')
         return null;
     }
     return `.room level-${roomID}`
@@ -35,10 +40,10 @@ function getRoomId(roomName){
     to see if the room ID doesn't exceed the current maximun amount of rooms. Compares then all the rooms, if one of the room
     has the same ID as the given one make that room visible, the rest will be hidden.
 */
-function goToRoom(roomName){
+function goToRoom(roomName){    
     if(!isRoomValid(roomName))return;
     if (getMaxRooms(rooms) < getRoomId(roomName)){
-        console.log('Reached max limit of Rooms, please create new rooms to go further.');
+        throwError('Reached max limit of Rooms, please create new rooms to go further.');
         return;
     }
     for (const room of rooms) {
@@ -66,9 +71,9 @@ function getMaxRooms(allRooms){
     isRoomValid function. Checks if the room name has a valid name: if the room name doesn't contain "room level-" it will 
     return false.
 */
-function isRoomValid(roomName){
-    if(roomName.replace(/[0-9]/g, '') != 'room level-'){
-        console.log('Incorrect room ID, please follow same room ID formating (room level-<levelNumber>).');
+function isRoomValid(roomName){    
+    if(roomName.replace(/[0-9]/g, '').replace('.', '').replace(' visible', '').replace(' hidden', '') != 'room level-'){
+        throwError('Incorrect room ID, please follow same room ID formating (room level-<levelNumber>).');
         return false;
     } 
     return true;
@@ -83,28 +88,17 @@ function goToFrame(){
 }
 
 
-
-//Testing buttons
-const button = document.querySelector('.roomSwitcher');
-const frameButton = document.querySelector('.frameSwitcher');
-const goClick = (event) => {
-    goToRoom(getNextRoom(currentRoom));
-    currentRoom = getNextRoom(currentRoom).replace(".", "");
-       
+/*
+    throwError function. Throw an error with a specific error message in console.
+*/
+function throwError(error){
+    throw new Error(error);
 }
-
-const goClick2 = (event) => {
-    goToFrame();       
-}
-
-frameButton.addEventListener("click", goClick2);
-button.addEventListener("click", goClick);
-
 
 
 //Possible OOP implemtation for the future.
 function createNewRoom() {
-    var obj = {};
+    const obj = {};
     obj.name = `level-${getMaxRooms(rooms) + 1}`;
     obj.frames = new Array();
     const section = document.createElement('section');
@@ -117,4 +111,4 @@ function createNewRoom() {
   }
 
 //const newRoom = createNewRoom();
-
+}
