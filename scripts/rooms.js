@@ -1,12 +1,15 @@
-const rooms = document.getElementById("rooms").querySelectorAll(".room"); 
-let currentRoom = 'room level-1'
+
+const rooms = document.getElementById("rooms").querySelectorAll(".room"); //Div containing all rooms in the game.
+let currentRoom = 'room level-1' //Default starting level name.
+let currentLevel = document.querySelector(`.level-${getRoomId(currentRoom)}`); //Section of the current level
 
 
+/*
+    getNextRoom function. Returns the level name of the next room of the given room put in parameter.
+    If the given room ID formating is incorrect or the room ID exceeds the total amout of rooms it will return null.
+*/
 function getNextRoom(roomName){
-    if(roomName.replace(/[0-9]/g, '') != 'room level-'){
-        console.log('Incorrect room ID, please follow same room ID formating (room level-<levelNumber>).');
-        return null;
-    }
+    if(!isRoomValid(roomName))return null;
     const roomID = getRoomId(roomName) + 1;
 
     if(roomID == null){
@@ -17,12 +20,23 @@ function getNextRoom(roomName){
 }
 
 
+/*
+    getRoomId function. Returns the current room NUMBER.
+    If the given room ID formating is incorrect it will return null.
+*/
 function getRoomId(roomName){
+    if(!isRoomValid(roomName))return null;
     return parseInt(roomName.replace(/\D/g, ""));
 }
 
 
-function goToRoom(roomName){    
+/*
+    goToRoom function. This function allows you to go to the specified room. Checks if the given room name is valid, then checks
+    to see if the room ID doesn't exceed the current maximun amount of rooms. Compares then all the rooms, if one of the room
+    has the same ID as the given one make that room visible, the rest will be hidden.
+*/
+function goToRoom(roomName){
+    if(!isRoomValid(roomName))return;
     if (getMaxRooms(rooms) < getRoomId(roomName)){
         console.log('Reached max limit of Rooms, please create new rooms to go further.');
         return;
@@ -40,19 +54,67 @@ function goToRoom(roomName){
 }
 
 
+/*
+    getMaxRooms function. Returns the toal length of the given rooms array. 
+*/
 function getMaxRooms(allRooms){
     return allRooms.length;
 }
 
-const button = document.querySelector('.roomSwitcher');
 
+/*
+    isRoomValid function. Checks if the room name has a valid name: if the room name doesn't contain "room level-" it will 
+    return false.
+*/
+function isRoomValid(roomName){
+    if(roomName.replace(/[0-9]/g, '') != 'room level-'){
+        console.log('Incorrect room ID, please follow same room ID formating (room level-<levelNumber>).');
+        return false;
+    } 
+    return true;
+}
+
+/*
+    goToFrame function. Possible implementation to go to a specific frame of the room by changing it's background-image
+    url in the CSS.
+*/
+function goToFrame(){    
+    currentLevel.style.backgroundImage = "url('https://mdn.mozillademos.org/files/12700/basic-image.png')";
+}
+
+
+
+//Testing buttons
+const button = document.querySelector('.roomSwitcher');
+const frameButton = document.querySelector('.frameSwitcher');
 const goClick = (event) => {
     goToRoom(getNextRoom(currentRoom));
     currentRoom = getNextRoom(currentRoom).replace(".", "");
        
 }
 
+const goClick2 = (event) => {
+    goToFrame();       
+}
+
+frameButton.addEventListener("click", goClick2);
 button.addEventListener("click", goClick);
 
 
+
+//Possible OOP implemtation for the future.
+function createNewRoom() {
+    var obj = {};
+    obj.name = `level-${getMaxRooms(rooms) + 1}`;
+    obj.frames = new Array();
+    const section = document.createElement('section');
+    section.className = `room ${obj.name} hidden`
+    document.querySelector('#rooms').appendChild(section);
+    console.log();
+    
+    document.querySelector(`.${obj.name}`).style.backgroundImage = "url('')";
+    return obj;
+  }
+
+//const newRoom = createNewRoom();
 
