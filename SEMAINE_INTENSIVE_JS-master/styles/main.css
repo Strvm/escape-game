@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.text{
+    font-family: 'Special Elite', cursive;
+}
+
+
+#rooms{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333333;
+    position: absolute;
+}
+
+
+.room{
+    position: absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    width: 960px;
+    height: 714.41px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
+}
+
+
+.level-1{
+    background-image: url("../images/frames/level-1/level-1.svg");
+}
+
+.level-2{
+    background-image: url("../images/frames/level-2/level-2.svg");
+}
+
+.level-3{
+    background-color: purple;
+}
+
+.level-4{
+    background-color: yellow;
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility:visible;
+}
+
+
+
+.clue{
+   background-color: red;
+   opacity: 0.5;
+}
+
+.level-1 .vase{
+    position: absolute;
+    top:185px;
+    left: 108px;
+    width: 40px;
+    height: 65px;
+    z-index: 10;
+}
+
+.level-1 .tab{
+    position: absolute;
+    top: 131PX;
+    left: 276PX;
+    width: 102px;
+    height: 55px;
+    z-index: 10;
+    transform: rotate(-39deg);
+
+}
+
+.level-1 .keyHide{
+    position: absolute;
+    top:325px;
+    left:307px;
+    width: 70px;
+    height: 50px;
+    z-index: 10;
+    transform: rotate(-70deg);
+}
+
+.level-1 .key{
+    position: absolute;
+    top:343px;
+    left:324px;
+    width: 38px;
+    height: 27px;
+    z-index: 9;
+    transform: rotate(-70deg);
+}
+
+.level-1 .door{
+    position: absolute;
+    top: 173px;
+    left: 768px;
+    width: 125px;
+    height: 306px;
+    z-index: 10;
+}
+
+.level-1 .frame{
+    position: absolute;
+    top:191PX;
+    left: 175PX;
+    width: 51px;
+    height: 25px;
+    z-index: 10;
+    transform: rotate(-90deg);
+}
+
+
+
+.level-2 .keyHide{
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 10;
+}
+
+.level-2 .key{
+    background-color: green;
+    opacity: 1;
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 9;
+}
+
+
+
+
+
+main{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/hallporteferme.svg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homeButton{
+    left: 30%;
+    top:60%;
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    border-radius:28px;
+    background-color: #761717;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    text-decoration: none; 
+    transition: background-color 400ms linear;
+    transition: color 400ms linear;
+}
+
+.text{
+    left: 20%;
+    top:40%;
+    position: absolute;
+    width: 350px;
+    color: white;
+    font-family: "Roboto";
+}
+
+.homeButton:hover{
+    transition:  background-color 400ms linear;
+    background-color: #D8D8D8; 
+    
+}
+
+
+.homeButton:hover{
+    transition: color 400ms linear;
+    color: black;
+}
+
+@font-face { font-family: 'Roboto';src: url('../fonts/Roboto-Regular.ttf'); }
