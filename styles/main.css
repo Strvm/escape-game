@@ -267,6 +267,8 @@ body{
     height: 6px;
     background-color: red;
     z-index: 10;
+    transition-property: width;
+    transition-duration: 1s;
 }
 
 
