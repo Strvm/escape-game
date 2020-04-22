@@ -67,9 +67,7 @@ function changeFrame(clueName){
     img.onload = function(){ 
         const level =  document.querySelector(`.level-${getRoomId(getCurrentRoom())}`)                
         if (img.src == level.style.backgroundImage.replace('url("', '').replace('")', '') || level.style.backgroundImage == `url("images/frames/level-${getRoomId(getCurrentRoom())}/keyfound.svg")`){
-            
             level.style.backgroundImage = `url("../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg")`;
-            
         }else{
             if(img.src.includes('key') ||  img.src.includes('keyHide')){
                 if (foundKey){
@@ -79,7 +77,8 @@ function changeFrame(clueName){
                     level.style.backgroundImage = `url("${img.src}")`;
                 }
             }else{
-            document.querySelector(`.${clueName}`).style.zIndex = '5'
+    
+                playSound('picking-object.mp3');
             level.style.backgroundImage = `url("${img.src}")`;
         }
         }

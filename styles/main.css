@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #151515;
+    /* background-color: #151515; */
     overflow: hidden;
 }
 
@@ -445,3 +445,51 @@ body{
     font-weight: normal;
     font-style: normal;
 }
+
+
+.fog {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+  }
+  
+  .fog-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .fog-img {
+    position: relative;
+    height: 100vh;
+    width: 300vw;
+    opacity: 1;
+  }
+  
+  .fog-img-first {
+    background: url("../images/fog-1.png"); 
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 60s linear infinite;
+  }
+  
+  .fog-img-second {
+    background: url("../images/fog-2.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 25s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    100% {
+      transform: translate3d(-200vw, 0, 0);
+    }
+  }
