@@ -53,7 +53,10 @@ function goToRoom(roomName){
     
     currentRoom = roomName.replace('.', '');
     console.log('After ' + currentRoom);
-    
+    const barre = document.querySelector(".barre")
+    barre.style.width = getRoomId(getCurrentRoom())*25 + "%"
+
+
     for (const room of rooms) {
         if (getRoomId(room.className) == getRoomId(roomName)){
             room.classList.remove('hidden')
@@ -119,4 +122,9 @@ function createNewRoom() {
   }
 
 //const newRoom = createNewRoom();
+
+
+
+const barre = document.querySelector(".barre")
+barre.style.width = getRoomId(getCurrentRoom())*25 + "%"
 }

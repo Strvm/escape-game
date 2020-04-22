@@ -195,3 +195,19 @@ main{
 }
 
 @font-face { font-family: 'Roboto';src: url('../fonts/Roboto-Regular.ttf'); }
+
+
+.barre{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 6px;
+    background-color: red;
+    z-index: 10;
+    transition-property: width;
+    transition-duration: 1s;
+}
+
+
+
+

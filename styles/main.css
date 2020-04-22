@@ -155,23 +155,150 @@ body{
 
 .level-2 .keyHide{
     position: absolute;
-    top: 46%;
-    left: 38.5%;
-    width: 60px;
-    height: 50px;
+    width: 20px;
+    height: 40px;
+    left: 161px;
+    top: 159px;
     z-index: 10;
-   
 }
 
 .level-2 .key{
-    opacity: 1;
     position: absolute;
-    top: 46%;
-    left: 38.5%;
-    width: 60px;
-    height: 50px;
+    width: 20px;
+    height: 40px;
+    left: 166px;
+    top: 121px;
     z-index: 9;
 }
+
+.level-2 .robinet{
+    position: absolute;
+    width: 24px;
+    height: 30px;
+    left: 255px;
+    top: 320px;
+}
+
+.level-2 .assiette{
+    position: absolute;
+    width: 57px;
+    height: 34px;
+    left: 513px;
+    top: 468px;
+    transform: rotate(-25deg);
+}
+
+.level-2 .assietteSansClef{
+    position: absolute;
+    width: 57px;
+    height: 34px;
+    left: 513px;
+    top: 468px;
+    transform: rotate(-25deg);
+}
+
+.level-2 .frigo{
+    position: absolute;
+    width: 102px;
+    height: 170px;
+    left: 453px;
+    top: 250px;
+}
+
+.level-2 .frigoSansClef{
+    position: absolute;
+    width: 102px;
+    height: 170px;
+    left: 453px;
+    top: 250px;
+}
+
+.level-2 .robinetSansClef{
+    position: absolute;
+    width: 24px;
+    height: 30px;
+    left: 255px;
+    top: 320px;
+
+}
+
+.level-2 .tireBouchon{
+    position: absolute;
+    width: 20px;
+    height: 19px;
+    left: 255px;
+    top: 444px;
+    transform: rotate(-16deg);
+    z-index:9;
+}
+
+.level-2 .tiroirBas{
+    position: absolute;
+    width: 74px;
+    height: 32px;
+    left: 205px;
+    top: 464px;
+    transform: rotate(-16deg);
+}
+
+.level-2 .tiroirBasSansClef{
+    position: absolute;
+    width: 74px;
+    height: 32px;
+    left: 205px;
+    top: 464px;
+    transform: rotate(-16deg);
+}
+
+.level-2 .tiroirHaut{
+    position: absolute;
+    width: 77px;
+    height: 17px;
+    left: 201px;
+    top: 409px;
+    transform: rotate(-16deg);
+}
+
+.level-2 .tiroirHautSansClef{
+    position: absolute;
+    width: 77px;
+    height: 17px;
+    left: 201px;
+    top: 409px;
+    transform: rotate(-16deg);
+}
+
+.level-2 .tiroirMilieu{
+    position: absolute;
+    width: 77px;
+    height: 19px;
+    left: 201px;
+    top: 438px;
+    transform: rotate(-16deg);
+    z-index: 10;
+}
+.level-2 .tiroirMilieuSansClef{
+    position: absolute;
+    width: 77px;
+    height: 19px;
+    left: 201px;
+    top: 438px;
+    transform: rotate(-16deg);
+    z-index: 8;
+}
+
+.level-2 .door{
+    position: absolute;
+    width: 112px;
+    height: 281px;
+    left: 776px;
+    top: 185px;
+}
+
+
+
+
+
 
 
 /* HOMEPAGE */
