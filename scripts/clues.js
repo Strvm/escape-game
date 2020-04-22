@@ -46,7 +46,7 @@ function changeFrame(clueName){
         }
         return;
     }
-    var img = new Image();
+    const img = new Image();
     
     img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
     
