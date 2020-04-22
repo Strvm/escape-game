@@ -23,8 +23,8 @@ body{
     left:0; right:0;
     top:0; bottom:0;
     margin:auto;
-    width: 100%;
-    height: 100%;
+    width: 960px;
+    height: 714.41px;
     background-repeat: no-repeat;
     object-fit: cover;
     background-position: center;
@@ -66,7 +66,7 @@ body{
 .level-1 .vase{
     position: absolute;
     top: 26%;
-    left: 24%;
+    left: 11%;
     width: 40px;
     height: 65px;
     z-index: 10;
@@ -75,7 +75,7 @@ body{
 .level-1 .keyHide{
     position: absolute;
     top: 46%;
-    left: 38.5%;
+    left: 32.5%;
     width: 60px;
     height: 50px;
     z-index: 10;
@@ -85,7 +85,7 @@ body{
 .level-1 .key{
     position: absolute;
     top: 46%;
-    left: 38.5%;
+    left: 32.5%;
     width: 60px;
     height: 50px;
     z-index: 9;
@@ -95,7 +95,7 @@ body{
 .level-1 .door{
     position: absolute;
     top: 25%;
-    left: 70%;
+    left: 80%;
     width: 125px;
     height: 300px;
     z-index: 10;
@@ -130,10 +130,12 @@ body{
 
 
 .home{
+    left:0; right:0;
+    top:0; bottom:0;
     position: absolute;
     margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
+    width: 960px;
+    height: 714.41px;
     background-image: url("../images/frames/home/home.svg");
     object-fit: cover;
     background-repeat: no-repeat;
@@ -141,7 +143,7 @@ body{
 }
 
 .homeButton{
-    left: 30%;
+    left: 20%;
     top:60%;
     position: absolute;
     width: 180px;
@@ -157,8 +159,8 @@ body{
     font-weight: bold;
 }
 
-.text{
-    left: 20%;
+.home .text{
+    left: 5%;
     top:-15%;
     position: relative;
     width: 350px;
@@ -167,7 +169,7 @@ body{
     font-weight: 500;
 }
 
-.homeButton:hover{
+.home .homeButton:hover{
     background-color: #D8D8D8; 
     color: #761717;  
     transition: background-color 200ms linear;
@@ -178,19 +180,19 @@ body{
 
 
 
-.mainTitle{
+.home .mainTitle{
     position: relative;
     top: -4%;
-    right: -4%;
+    right: 15%;
     font-family: "The Night Creatures", sans-serif;
     color: white;
     font-size: 120px;
 }
 
-.subTitle{
+.home .subTitle{
     position: relative;
     top: -16%;
-    right: -26%;
+    right: -20%;
     font-family: "Roboto", sans-serif;
     font-weight: lighter;
     color: white;
@@ -199,7 +201,7 @@ body{
 
 
 .home .door{
-    left: 70%;
+    left: 80%;
     top: -45%;
     position: relative;
     width: 120px;
