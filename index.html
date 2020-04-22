@@ -25,13 +25,13 @@
 
     document.querySelector('.homeButton').addEventListener("click", function(e) {
         event.preventDefault();
-        document.querySelector('.home').style.backgroundImage = 'url("images/frames/home/homeOpen.svg")'
+        document.querySelector('.home').style.backgroundImage = 'url("./images/frames/home/homeOpen.svg")'
         document.querySelector('.door').style.display = 'block'
     });
 
     document.querySelector('.door').addEventListener("click", function(e) {
         if (document.querySelector('.door').style.display != 'none'){
-            window.location.href = "pages/game.html";
+            window.location.href = "./pages/game.html";
         }
     });
     </script>
