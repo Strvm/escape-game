@@ -6,6 +6,7 @@ let clueName;
 let foundKey = false;
 let lastInteraction = '';
 let foundHideSpot = false;
+let isLocked = true;
 
 const clueClick = (event) => {
    if(!isClue(event.target.className))return;
@@ -52,6 +53,7 @@ function changeFrame(clueName){
         if(foundKey){
             goToRoom(getNextRoom(getCurrentRoom()));
             foundKey = false;
+            isLocked = true;
             lastInteraction = '';
             playSound('key-open.mp3');
             return;
@@ -86,6 +88,7 @@ function changeFrame(clueName){
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
             img.onload = function(){ 
             level.style.backgroundImage = `url("${img.src}")`;
+            document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
             return;
             }
         }else{
@@ -94,21 +97,98 @@ function changeFrame(clueName){
     }else{
         img.onload = function(){ 
             console.log(clueName);
-            
-            if (foundHideSpot) {
-                foundHideSpot = false;
-                document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
+            if (getCurrentRoom() == 'room level-1') {    
+                if (foundHideSpot) {
+                    foundHideSpot = false;
+                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
+                }
+                if (clueName == 'keyHide') { 
+                    foundHideSpot = true;
+                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
+                }
+
+            }else{
+                if (foundHideSpot) {
+                    foundHideSpot = false;
+                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
+                }
+
+                if (clueName == 'keyHide' && isLocked) {  
+                    return;
+                }
+
+                if (clueName == 'keyHide' && !isLocked) {  
+                    foundHideSpot = true;
+                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .key`).style.display = 'block';
+                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
+                }
+                if (clueName == 'tireBouchon' && isLocked && getCurrentRoom() != 'room level-1') {
+                    isLocked = false;
+                }
             }
-            if (clueName == 'keyHide') {                
-                foundHideSpot = true;
-                document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
-            }
+
             level.style.backgroundImage = `url("${img.src}")`;
+        }
+        if(clueName == 'keyHide' && foundKey && getCurrentRoom() == 'room level-1'){
+            img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
+            img.onload = function(){ 
+                level.style.backgroundImage = `url("${img.src}")`;
+            }
         }
     }
 
 
+    function iscolliding(a, b) {
+        return !(
+            ((a.y + a.height) < (b.y)) ||
+            (a.y > (b.y + b.height)) ||
+            ((a.x + a.width) < b.x) ||
+            (a.x > (b.x + b.width))
+        );
+    }
 
+    function isinside(a, b) {
+        if (a.top <= b.top && a.left <= b.left && a.right >= b.right && a.bottom >= b.bottom)return true;
+        return (false); 
+    }
+
+    document.addEventListener('keydown', (event) => {
+        let player = document.getElementById("player");
+        if (event.key == "ArrowUp") {
+            player.style.top = (parseFloat(player.style.top) - 1) + "%";
+        }
+        else if (event.key == "ArrowDown") {
+            player.style.top = (parseFloat(player.style.top) + 1) + "%";
+        }
+        else if (event.key == "ArrowLeft") {
+            player.style.left = (parseFloat(player.style.left) - 1) + "%";
+        }
+        else if (event.key == "ArrowRight") {
+            player.style.left = (parseFloat(player.style.left) + 1) + "%";
+        }
+        let labyrinthe = document.getElementById("labyrinthe");
+        if (!isinside(labyrinthe.getBoundingClientRect(), player.getBoundingClientRect())) {
+            player.style.top = "90%";
+            player.style.left = "5%";
+            return;
+        }
+        let walls = document.getElementsByClassName("wall");
+        for (let i = 0; i < walls.length; i++) {
+            if (iscolliding(walls[i].getBoundingClientRect(), player.getBoundingClientRect())) {
+                player.style.top = "90%";
+                player.style.left = "5%";
+                return;
+            }
+        }
+        let finish = document.getElementById("finish");
+        if (iscolliding(finish.getBoundingClientRect(), player.getBoundingClientRect())) {
+            // TODO WIN
+            labyrinthe.style.visibility = "hidden";
+            console.log("WIN");
+            
+            return;
+        }
+    });
 
 
 
