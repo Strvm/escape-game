@@ -30,6 +30,8 @@
         document.querySelector('.door').style.display = 'block'
         img.onload = function(){ 
             document.querySelector('.home').style.backgroundImage = 'url("./images/frames/home/homeOpen.svg")'
+            const audio = new Audio(`./sounds/door-open.mp3`);
+
         }
     });
 

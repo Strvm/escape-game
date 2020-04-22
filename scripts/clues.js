@@ -28,11 +28,20 @@ function isKey(clueName){
     return false;
 }
 
+function playSound(sound){
+    console.log(`sounds/${sound}`);
+    
+    const audio = new Audio(`../sounds/${sound}`);
+    audio.play();
+}
+
 function changeFrame(clueName){
+    const img = new Image();
     if(isKey(clueName)){
         if(!foundKey){
         foundKey = true;
         document.querySelector('.key').style.display = 'none';
+        playSound('pick-key.mp3');
         }else{
             document.querySelector(`.level-${getRoomId(getCurrentRoom())}`).style.backgroundImage = `url("images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg")`;
             return;
@@ -42,11 +51,11 @@ function changeFrame(clueName){
         if(foundKey){
             goToRoom(getNextRoom(getCurrentRoom()));
             foundKey = false;
+            playSound('key-open.mp3');
             return;
         }
         return;
     }
-    const img = new Image();
     
     img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
     

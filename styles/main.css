@@ -205,6 +205,19 @@ body{
     transition: background-color 200ms linear;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
+    animation: float 1.2s linear alternate infinite;
+}
+
+@keyframes float{
+    0%   {
+
+        transform: translateY(-3px);
+
+    }
+    100% {
+        transform: translateY(5px);
+
+    }
 }
 
 .home .text{
