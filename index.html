@@ -1,44 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <title>Jeux</title>
+    <title>Document</title>
 </head>
 <body>
-
-     <section class="fog">
-    <div class="absolute-bg"></div>
-    <div class="fog-container">
-      <div class="fog-img fog-img-first"></div>
-      <div class="fog-img fog-img-second"></div>
-    </div>
-  </section>
-    <div id="rooms">
-        <section class="room level-1 visible">
-            <h1>Room1</h1>
-            <div class="clue vase"></div>
-            <div class="clue keyHide"></div>
-            <div class="clue key"></div>
-            <div class="clue door"></div>
-        </section>
-        <section class="room level-2 hidden">
-            <h1>Room2</h1>
-            <div class="clue keyHide"></div>
-            <div class="clue key"></div>
-        </section>
-        <section class="room level-3 hidden"><h1>Room3</h1></section>
-        <section class="room level-4 hidden"><h1>Room4</h1></section>
-    </div>
-    <div class="roomSwitcher">Next Room</div>
-    <div class="frameSwitcher">Next Frame</div>
-    <script type="text/javascript">
-        window.ESCAPE_ROOM = {};
+    <section class="home">
+            <h1 class="mainTitle" data-aos="fade-right" data-aos-duration="2500">The Escape Game</h1>
+            <h6 class="subTitle" data-aos="fade-right" data-aos-duration="2000">Episode 1: La maison hantée</h6>
+            <p class="text" data-aos="fade-right" data-aos-duration="2500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos optio, exercitationem illo ullam reiciendis. Officiis consequuntur commodi magnam doloribus quis, adipisci fugit dignissimos, tempore velit aut est deleniti. Nisi?`</p>
+            <a href="javascript:void(0)" class="homeButton" data-aos="zoom-in" data-aos-duration="1000">J'OSE</a>
+            <div class="door"></div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
-    <script src="scripts/rooms.js"></script>
-    <script src="scripts/clues.js"></script>
+    <script>
+
+
+    document.querySelector('.homeButton').addEventListener("click", function(e) {
+        event.preventDefault();
+        document.querySelector('.home').style.backgroundImage = 'url("images/frames/home/homeOpen.svg")'
+        document.querySelector('.door').style.display = 'block'
+    });
+
+    document.querySelector('.door').addEventListener("click", function(e) {
+        if (document.querySelector('.door').style.display != 'none'){
+            window.location.href = "pages/game.html";
+        }
+    });
+    </script>
 </body>
 </html>

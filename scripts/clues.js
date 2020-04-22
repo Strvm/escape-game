@@ -47,7 +47,8 @@ function changeFrame(clueName){
         return;
     }
     var img = new Image();
-    img.src = `images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
+    
+    img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
     
     img.onerror = function(){ // Failed to load
         throwError('Couldn\'t find image at the current folder');
@@ -55,22 +56,16 @@ function changeFrame(clueName){
     };
 
     img.onload = function(){ 
-        const level =  document.querySelector(`.level-${getRoomId(getCurrentRoom())}`)
-        console.log(level);
-        
-        console.log(img.src + " " + level.style.backgroundImage.replace('url("', '').replace('")', ''));
-        
+        const level =  document.querySelector(`.level-${getRoomId(getCurrentRoom())}`)                
         if (img.src == level.style.backgroundImage.replace('url("', '').replace('")', '') || level.style.backgroundImage == `url("images/frames/level-${getRoomId(getCurrentRoom())}/keyfound.svg")`){
             
-            level.style.backgroundImage = `url("images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg")`;
+            level.style.backgroundImage = `url("../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg")`;
             
         }else{
             if(img.src.includes('key') ||  img.src.includes('keyHide')){
                 if (foundKey){
-                    level.style.backgroundImage = `url("images/frames/level-${getRoomId(getCurrentRoom())}/keyfound.svg")`;
-                }else{
-                    console.log(`.level-${getRoomId(getCurrentRoom())} .${clueName}`);
-                    
+                    level.style.backgroundImage = `url("../images/frames/level-${getRoomId(getCurrentRoom())}/keyfound.svg")`;
+                }else{                    
                     document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5'
                     level.style.backgroundImage = `url("${img.src}")`;
                 }

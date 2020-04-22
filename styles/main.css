@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #151515;
 }
 
 .text{
@@ -12,7 +13,7 @@ body{
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #333333;
+    background-color: #151515;
     position: absolute;
 }
 
@@ -125,14 +126,15 @@ body{
 }
 
 
+/* HOMEPAGE */
 
 
-
-main{
+.home{
+    position: absolute;
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
-    background-image: url("../images/hallporteferme.svg");
+    background-image: url("../images/frames/home/home.svg");
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -145,34 +147,99 @@ main{
     width: 180px;
     height: 40px;
     border-radius:28px;
-    background-color: #761717;
     text-align: center;
     line-height: 40px;
     color: white;
+    background-color: #761717;
     text-decoration: none; 
-    transition: background-color 400ms linear;
-    transition: color 400ms linear;
+    transition: background-color 200ms linear;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
 }
 
 .text{
     left: 20%;
-    top:40%;
-    position: absolute;
+    top:-15%;
+    position: relative;
     width: 350px;
     color: white;
     font-family: "Roboto";
+    font-weight: 500;
 }
 
 .homeButton:hover{
-    transition:  background-color 400ms linear;
     background-color: #D8D8D8; 
-    
+    color: #761717;  
+    transition: background-color 200ms linear;
 }
 
 
-.homeButton:hover{
-    transition: color 400ms linear;
-    color: black;
+
+
+
+
+.mainTitle{
+    position: relative;
+    top: -4%;
+    right: -4%;
+    font-family: "The Night Creatures", sans-serif;
+    color: white;
+    font-size: 120px;
 }
 
-@font-face { font-family: 'Roboto';src: url('../fonts/Roboto-Regular.ttf'); }
+.subTitle{
+    position: relative;
+    top: -16%;
+    right: -26%;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    color: white;
+    font-size: 15px;
+}
+
+
+.home .door{
+    left: 70%;
+    top: -45%;
+    position: relative;
+    width: 120px;
+    height: 300px;
+    display: none;
+}
+
+
+
+
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Thin.woff') format('woff2'),
+        url('../fonts/Roboto-Thin.woff2') format('woff');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'The Night Creatures';
+    src: url('../fonts/TheNightCreatures.woff2') format('woff2'),
+        url('../fonts/TheNightCreatures.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
