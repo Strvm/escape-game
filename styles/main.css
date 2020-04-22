@@ -61,7 +61,7 @@ body{
 
 .clue{
    background-color: red;
-   /* opacity: 0.5; */
+   opacity: 0.5;
 }
 
 .level-1 .vase{
@@ -83,7 +83,57 @@ body{
     transform: rotate(-70deg);
 }
 
+.level-1 .cadre{
+    position: absolute;
+    top: 25%;
+    left: 19.5%;
+    width: 30px;
+    height: 50px;
+    z-index: 10;
+}
+
+.level-1 .tableau{
+    position: absolute;
+    top: 18.5%;
+    left: 29%;
+    width: 100px;
+    height: 50px;
+    z-index: 10;
+    transform: rotate(-35deg);
+}
+
+.level-1 .tapis{
+    position: absolute;
+    top: 65%;
+    left: 70%;
+    width: 80px;
+    height: 50px;
+    z-index: 10;
+    transform: rotate(-160deg);
+}
+
+.level-1 .tiroirHaut{
+    position: absolute;
+    top: 48%;
+    left: 47%;
+    width: 50px;
+    height: 10px;
+    z-index: 10;
+    transform: rotate(-16deg);
+}
+
+.level-1 .tiroirBas{
+    position: absolute;
+    top: 50.5%;
+    left: 47.5%;
+    width: 50px;
+    height: 20px;
+    z-index: 10;
+    transform: rotate(-16deg);
+}
+
 .level-1 .key{
+    background-color: green;
     position: absolute;
     top: 46%;
     left: 32.5%;
@@ -116,7 +166,6 @@ body{
 }
 
 .level-2 .key{
-    background-color: green;
     opacity: 1;
     position: absolute;
     top: 46%;
@@ -212,7 +261,14 @@ body{
 
 
 
-
+.barre{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 6px;
+    background-color: red;
+    z-index: 10;
+}
 
 
 @font-face {

@@ -3,15 +3,17 @@
 let currentRoom = 'room level-1' //Default starting level name.
 let currentLevel = document.querySelector(`.level-${getRoomId(currentRoom)}`); //Section of the current level
 const rooms = document.getElementById("rooms").querySelectorAll(".room"); //Div containing all rooms in the game.
+const barre = document.querySelector(".barre")
 //Assigning all the functions to the ESCAPE_ROOM object.
 Object.assign(ESCAPE_ROOM, {
     rooms,throwError, getCurrentRoom ,currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid
   });
 
-
+  
 function getCurrentRoom(){
     return currentRoom;
 }
+
 
 /*
     getNextRoom function. Returns the level name of the next room of the given room put in parameter.
@@ -52,6 +54,7 @@ function goToRoom(roomName){
     }
     
     currentRoom = roomName.replace('.', '');
+    barre.style.width = getRoomId(getCurrentRoom())*25 + "%"
     console.log('After ' + currentRoom);
     
     for (const room of rooms) {
