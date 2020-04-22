@@ -1,3 +1,4 @@
+
 "use strict"
 {
 let { rooms,throwError, getCurrentRoom, currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid} = ESCAPE_ROOM;
@@ -60,7 +61,7 @@ function changeFrame(clueName){
     }
 
     if (lastInteraction == clueName) {
-        if (foundKey && clueName) {            
+        if (foundKey && clueName) {
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
         }else{
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg`;
@@ -73,11 +74,11 @@ function changeFrame(clueName){
     }
     console.log(clueName);
     
-    if (foundKey && getCurrentRoom() != 'room level-1'){
+    if (foundKey && getCurrentRoom != 'room level-1')
         img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}-nokey.svg`;
-    }else{
+    else
         img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
-    }
+
     if (isKey(clueName)) {
         if(!foundKey && lastInteraction == 'keyHide'){
             foundKey = true;
