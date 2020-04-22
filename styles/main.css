@@ -172,6 +172,7 @@ body{
     left: 166px;
     top: 121px;
     z-index: 9;
+    display: none;
 }
 
 .level-2 .robinet{
@@ -532,6 +533,46 @@ left:200px;
     font-weight: normal;
     font-style: normal;
 }
+
+
+#labyrinthe {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 768px;
+    height: 571px;
+    z-index: 42;
+    background-color: #0F0904;
+}
+
+#finish {
+    background-color : #999999;
+    position: absolute;
+    top: 58%;
+    left: 63%;
+    width: 50px;
+    height: 50px;
+    z-index: 50;
+}
+
+.wall {
+    background-color : #302D2B;
+    position: absolute;
+    z-index: 50;
+}
+
+#player {
+    background-color : blue;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 50;
+    transition: top 0.1s linear, left 0.1s linear;
+}
+
+
+
+
 
 
 .fog {
