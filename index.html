@@ -9,9 +9,27 @@
     <title>Jeux</title>
 </head>
 <body>
+
+     <section class="fog">
+    <div class="absolute-bg"></div>
+    <div class="fog-container">
+      <div class="fog-img fog-img-first"></div>
+      <div class="fog-img fog-img-second"></div>
+    </div>
+  </section>
     <div id="rooms">
-        <section class="room level-1 visible"><h1>Room1</h1></section>
-        <section class="room level-2 hidden"><h1>Room2</h1></section>
+        <section class="room level-1 visible">
+            <h1>Room1</h1>
+            <div class="clue vase"></div>
+            <div class="clue keyHide"></div>
+            <div class="clue key"></div>
+            <div class="clue door"></div>
+        </section>
+        <section class="room level-2 hidden">
+            <h1>Room2</h1>
+            <div class="clue keyHide"></div>
+            <div class="clue key"></div>
+        </section>
         <section class="room level-3 hidden"><h1>Room3</h1></section>
         <section class="room level-4 hidden"><h1>Room4</h1></section>
     </div>
@@ -21,6 +39,6 @@
         window.ESCAPE_ROOM = {};
     </script>
     <script src="scripts/rooms.js"></script>
-    <script src="scripts/test.js"></script>
+    <script src="scripts/clues.js"></script>
 </body>
 </html>

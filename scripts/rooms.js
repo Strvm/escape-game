@@ -1,13 +1,17 @@
 "use strict" //Use strict to not pullute global variables
 {
-const rooms = document.getElementById("rooms").querySelectorAll(".room"); //Div containing all rooms in the game.
 let currentRoom = 'room level-1' //Default starting level name.
 let currentLevel = document.querySelector(`.level-${getRoomId(currentRoom)}`); //Section of the current level
-
+const rooms = document.getElementById("rooms").querySelectorAll(".room"); //Div containing all rooms in the game.
 //Assigning all the functions to the ESCAPE_ROOM object.
 Object.assign(ESCAPE_ROOM, {
-    rooms,throwError ,currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid
+    rooms,throwError, getCurrentRoom ,currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid
   });
+
+
+function getCurrentRoom(){
+    return currentRoom;
+}
 
 /*
     getNextRoom function. Returns the level name of the next room of the given room put in parameter.
@@ -46,6 +50,10 @@ function goToRoom(roomName){
         throwError('Reached max limit of Rooms, please create new rooms to go further.');
         return;
     }
+    
+    currentRoom = roomName.replace('.', '');
+    console.log('After ' + currentRoom);
+    
     for (const room of rooms) {
         if (getRoomId(room.className) == getRoomId(roomName)){
             room.classList.remove('hidden')

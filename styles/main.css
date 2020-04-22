@@ -9,7 +9,6 @@ body{
 
 
 #rooms{
-    z-index: -1;
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -23,19 +22,20 @@ body{
     left:0; right:0;
     top:0; bottom:0;
     margin:auto;
-    width: 75%;
-    height: 75%;
-    
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
 }
 
 
 .level-1{
-    background-image: url("http://placekitten.com/300/300");
+    background-image: url("../images/frames/level-1/level-1.svg");
 }
 
 .level-2{
-    background-color: blue;
+    background-image: url("../images/frames/level-2/level-2.svg");
 }
 
 .level-3{
@@ -55,14 +55,124 @@ body{
     visibility:visible;
 }
 
-.roomSwitcher{
-    width: 50px;
-    height: 50px;
-    background-color: white;
+
+
+.clue{
+   background-color: red;
+   /* opacity: 0.5; */
 }
 
-.frameSwitcher{
-    width: 50px;
-    height: 50px;
-    background-color: white;
+.level-1 .vase{
+    position: absolute;
+    top: 26%;
+    left: 24%;
+    width: 40px;
+    height: 65px;
+    z-index: 10;
 }
+
+.level-1 .keyHide{
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 10;
+    transform: rotate(-70deg);
+}
+
+.level-1 .key{
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 9;
+    transform: rotate(-70deg);
+}
+
+.level-1 .door{
+    position: absolute;
+    top: 25%;
+    left: 70%;
+    width: 125px;
+    height: 300px;
+    z-index: 10;
+    transform: rotate(2deg);
+}
+
+
+
+.level-2 .keyHide{
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 10;
+   
+}
+
+.level-2 .key{
+    background-color: green;
+    opacity: 1;
+    position: absolute;
+    top: 46%;
+    left: 38.5%;
+    width: 60px;
+    height: 50px;
+    z-index: 9;
+}
+
+
+
+
+
+main{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/hallporteferme.svg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homeButton{
+    left: 30%;
+    top:60%;
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    border-radius:28px;
+    background-color: #761717;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    text-decoration: none; 
+    transition: background-color 400ms linear;
+    transition: color 400ms linear;
+}
+
+.text{
+    left: 20%;
+    top:40%;
+    position: absolute;
+    width: 350px;
+    color: white;
+    font-family: "Roboto";
+}
+
+.homeButton:hover{
+    transition:  background-color 400ms linear;
+    background-color: #D8D8D8; 
+    
+}
+
+
+.homeButton:hover{
+    transition: color 400ms linear;
+    color: black;
+}
+
+@font-face { font-family: 'Roboto';src: url('../fonts/Roboto-Regular.ttf'); }
