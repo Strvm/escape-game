@@ -553,7 +553,7 @@ left:200px;
     height: 571px;
     z-index: 42;
     background-color: #0F0904;
-    display: none;
+    
 }
 
 #finish {
@@ -621,6 +621,15 @@ left:200px;
     background-size: contain;
     background-position: center;
     animation: marquee 25s linear infinite;
+}
+
+.ghost{
+    background: url("../images/ghostwithoutshadow.svg");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 15s linear infinite;
+    z-index: 100;
 }
 
 @keyframes marquee {
