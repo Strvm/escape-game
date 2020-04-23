@@ -124,4 +124,11 @@ function createNewRoom() {
 //const newRoom = createNewRoom();
 
 barre.style.width = getRoomId(getCurrentRoom())*25 + "%"
+
+
+
+
+
 }
+
+
