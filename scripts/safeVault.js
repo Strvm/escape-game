@@ -18,7 +18,7 @@ document.querySelector('.pincode').addEventListener('click', (event) => {
 		document.querySelector(`.fields .c${lengthCode} .numberfield`).classList.add('active')
 		document.querySelector('.text').innerHTML = `<strong>Il faut entrer un code...</strong>`
 		if (lengthCode == 2) {
-			// Check if the code is correct
+			// Check if the code is correct.
 			if (enterCode == pin) {
 
 			// If the code is correct, do this :
@@ -32,7 +32,7 @@ document.querySelector('.pincode').addEventListener('click', (event) => {
 			setFoundKey(true);
 			} 
 			else {
-			// If the code entered is wrong
+			// If the code entered is wrong.
 			enterCode = '';
 			document.querySelector('.fields').classList.add('miss')
 			document.querySelector(`.fields .c${lengthCode} .numberfield`).classList.remove('right')
