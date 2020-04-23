@@ -378,6 +378,61 @@ body{
 
 
 
+.level-4 .douche{
+    width: 37px;
+    height: 24px;
+    position: absolute;
+    top: 129px;
+    left: 487px;
+}
+.level-4 .placard{
+    width: 109px;
+    height: 153px;
+    position: absolute;
+    top: 135px;
+    left: 175px;
+}
+.level-4 .rideau{
+    width: 133px;
+    height: 263px;
+    position: absolute;
+    top: 175px;
+    left: 335px;
+}
+.level-4 .robinet{
+    width: 22px;
+    height: 42px;
+    position: absolute;
+    top: 297px;
+    left: 233px;
+}
+.level-4 .tapis{
+    width: 57px;
+    height: 172px;
+    position: absolute;
+    top: 397px;
+    left: 327px;
+    transform: rotate(-74deg)
+}
+.level-4 .toilette{
+    width: 82px;
+    height: 49px;
+    position: absolute;
+    top: 426px;
+    left: 86px;
+
+}
+
+.level-4 .door{
+    position: absolute;
+    width: 115px;
+    height: 318px;
+    top: 163px;
+    left: 772px;
+}
+
+
+
 
 
 
@@ -622,10 +677,20 @@ body{
 .ghost{
     width: 100px;
     height: 80px;
-    opacity: 0.7;
     margin: 0;
     z-index: 1000;
-    pointer-events: none
+    pointer-events: none;
+    animation: spawn 5s linear forwards;
+}
+
+@keyframes spawn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0.7;
+    }
 }
 
 
@@ -651,4 +716,6 @@ body{
     background-color: white;
     z-index: 1000;
 }
+
+
 
