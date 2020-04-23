@@ -612,6 +612,36 @@ body{
     
 }
 
+
+#finish {
+    background-color : #999999;
+    position: absolute;
+    top: 58%;
+    left: 63%;
+    width: 50px;
+    height: 50px;
+    z-index: 50;
+}
+
+.wall {
+    background-color : #302D2B;
+    position: absolute;
+    z-index: 50;
+}
+
+#player {
+    /* background-color : blue; */
+    background-image: url("../images/clef.svg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    z-index: 50;
+    transition: top 0.1s linear, left 0.1s linear;
+}
+
+
 /***************************
     safeVault Mini-game
 ***************************/
@@ -638,7 +668,17 @@ body{
     padding-top:20px;
   }
   
-  
+  .keyWin{
+      position: relative;
+      margin: 0;
+      width: 100px;
+      height: 50px;
+      margin-left: 280px;
+      background-image: url("../images/clef.svg");
+      object-fit: cover;
+      background-repeat: no-repeat;
+      display: none;
+  }
   /*----------------------------
             Locker Code
   ----------------------------*/
@@ -844,30 +884,6 @@ body{
     }
 }
 
-#finish {
-    background-color : #999999;
-    position: absolute;
-    top: 58%;
-    left: 63%;
-    width: 50px;
-    height: 50px;
-    z-index: 50;
-}
-
-.wall {
-    background-color : #302D2B;
-    position: absolute;
-    z-index: 50;
-}
-
-#player {
-    background-color : blue;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    z-index: 50;
-    transition: top 0.1s linear, left 0.1s linear;
-}
 
 
 

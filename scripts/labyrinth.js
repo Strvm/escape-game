@@ -45,7 +45,7 @@ document.addEventListener('keydown', (event) => {
     for (let i = 0; i < walls.length; i++) {
         if (iscolliding(walls[i].getBoundingClientRect(), player.getBoundingClientRect())) {
             player.style.top = "90%";
-            player.style.left = "5%";
+            player.style.left = "3%";
             return;
         }
     }
