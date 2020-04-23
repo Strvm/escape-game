@@ -5,9 +5,6 @@ body{
     overflow: hidden;
 }
 
-.text{
-    font-family: 'Special Elite', cursive;
-}
 
 
 #rooms{
@@ -62,8 +59,8 @@ body{
 
 
 
-.clue{
-   
+.clue:hover{
+   cursor: pointer;
 }
 
 .level-1 .vase{
@@ -288,7 +285,7 @@ body{
     left: 714px;
 }
 
-.level-3 .CoffreOuvert{
+.level-3 .coffreOuvert{
 width:50px;
 height:50px;
 position:absolute;
@@ -406,6 +403,7 @@ left:200px;
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 100;
 }
 
 .homeButton{
@@ -440,7 +438,7 @@ left:200px;
 
 .home .text{
     left: 5%;
-    top:-15%;
+    top:0%;
     position: relative;
     width: 350px;
     color: white;
@@ -461,21 +459,24 @@ left:200px;
 
 .home .mainTitle{
     position: relative;
-    top: -4%;
-    right: 15%;
-    font-family: "The Night Creatures", sans-serif;
+    top: 10%;
+    right: 5%;
+    font-family: "Stranger back in the Night", sans-serif;
+    font-weight: normal;
     color: white;
-    font-size: 120px;
+    margin: 0;
+    font-size: 200px;
 }
 
 .home .subTitle{
     position: relative;
-    top: -16%;
-    right: -20%;
+    top: -1%;
+    right: -26%;
     font-family: "Roboto", sans-serif;
     font-weight: lighter;
     color: white;
     font-size: 15px;
+    z-index: 100;
 }
 
 
@@ -534,6 +535,15 @@ left:200px;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Stranger back in the Night';
+    src: url('../fonts/StrangerbackintheNight.woff2') format('woff2'),
+        url('../fonts/StrangerbackintheNight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 #labyrinthe {
     position: absolute;
@@ -543,6 +553,7 @@ left:200px;
     height: 571px;
     z-index: 42;
     background-color: #0F0904;
+    display: none;
 }
 
 #finish {

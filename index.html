@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='icon' href='images/favicon.svg' type='image/x-icon'/ >
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <title>Home</title>
@@ -17,15 +18,12 @@
       </section>
     <section class="home">
             <h1 class="mainTitle" data-aos="fade-right" data-aos-duration="2500">The Escape Game</h1>
-            <h6 class="subTitle" data-aos="fade-right" data-aos-duration="2000">Episode 1: La maison hantée</h6>
-            <p class="text" data-aos="fade-right" data-aos-duration="2500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos optio, exercitationem illo ullam reiciendis. Officiis consequuntur commodi magnam doloribus quis, adipisci fugit dignissimos, tempore velit aut est deleniti. Nisi?`</p>
-            <a href="javascript:void(0)" class="homeButton" data-aos="zoom-in" data-aos-duration="1000">J'OSE</a>
+            <h6 class="subTitle" data-aos="fade-right" data-aos-duration="2000" data-aos-anchor=".mainTitle">Episode 1: La maison hantée</h6>
+            <p class="text" data-aos="fade-right" data-aos-duration="2500" data-aos-anchor=".mainTitle" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos optio, exercitationem illo ullam reiciendis. Officiis consequuntur commodi magnam doloribus quis, adipisci fugit dignissimos, tempore velit aut est deleniti. Nisi?`</p>
+            <a href="javascript:void(0)" class="homeButton" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor=".mainTitle">J'OSE</a>
             <div class="door"></div>
     </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
     <script>
     document.querySelector('.homeButton').addEventListener("click", function(e) {
         event.preventDefault();
@@ -45,6 +43,9 @@
             window.location.href = "./pages/game.html";
         }
     });
+    </script>
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>
