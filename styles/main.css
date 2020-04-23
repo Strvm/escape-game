@@ -201,11 +201,11 @@ body{
 .level-2 .tireBouchon{
     position: absolute;
     width: 20px;
-    height: 19px;
+    height: 21px;
     left: 255px;
     top: 444px;
     transform: rotate(-16deg);
-    z-index:9;
+    z-index:11;
 }
 
 .level-2 .tiroirBas{
@@ -229,6 +229,7 @@ body{
 
 
 .level-2 .tiroirMilieu{
+    
     position: absolute;
     width: 77px;
     height: 19px;
@@ -658,6 +659,14 @@ body{
     text-align: center;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
   
+}
+
+.close{
+    position: relative;
+    top: -43%;
+    left: 90%;
+    font-size: 20px;
+
 }
   
 .numbers{

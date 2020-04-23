@@ -1,9 +1,7 @@
 "use strict"
 {
 let { rooms,throwError , getCurrentRoom, currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid} = ESCAPE_ROOM;
-Object.assign(ESCAPE_ROOM, {
-    setFoundKey
-  });
+Object.assign(ESCAPE_ROOM, {setFoundKey});
 let clueName;
 let foundKey = false;
 let lastInteraction = '';
@@ -72,8 +70,8 @@ function changeFrame(clueName){
         return;
     }
 
-    if (lastInteraction == clueName) {
-        if (foundKey && clueName) {            
+    if (lastInteraction == clueName && lastInteraction != 'coffreOuvert') {
+        if (foundKey && clueName && getCurrentRoom() == 'room level-2') {            
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
         }else{
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}.svg`;
