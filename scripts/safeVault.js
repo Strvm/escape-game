@@ -32,6 +32,7 @@ document.querySelector('.pincode').addEventListener('click', (event) => {
 				document.querySelector(`.safeVaultContainer`).style.display = 'none';
 			}, 1000)
 			setFoundKey(true);
+			document.querySelector('.key-stuff').style.display = "block";
 			} 
 			else {
 			// If the code entered is wrong.

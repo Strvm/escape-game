@@ -1032,3 +1032,27 @@ body{
     z-index: 1500;
     /* display: none; */
 }
+
+.stuff{
+    width: 20px;
+}
+
+.full-stuff{
+    position: absolute;
+    top:90%;
+    left:50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.key-stuff{
+    display: none;
+}
+
+
+.tirebouchon-stuff{
+    display: none;
+}

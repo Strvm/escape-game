@@ -55,7 +55,7 @@ document.addEventListener('keydown', (event) => {
         document.querySelector(`.labyrinthContainer`).style.display = 'none';
         setFoundKey(true);
         console.log("WIN");
-        
+        document.querySelector('.key-stuff').style.display = "block"
         return;
     }
 });
