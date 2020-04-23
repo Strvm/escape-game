@@ -2,7 +2,7 @@
 "use strict"
 {
 const { setFoundKey, getRoomId, getCurrentRoom} = ESCAPE_ROOM;
-const pin = 123
+const pin = 810
 let enterCode = '';
 let isUnlocked = false;
 

@@ -975,5 +975,36 @@ body{
     z-index: 1000;
 }
 
+.text-zone{
+    position: absolute ;
+    bottom:50px;
+    right:50px;
+    background-color: rgb(255, 255, 255,0.2);
+    color: rgb(51, 51, 51);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+    z-index: 30;
+}
 
+
+.homeText{
+    position: absolute ;
+    bottom:150px;
+    right:150px;
+    background-color: rgb(255, 255, 255,0.2);
+    color: rgb(51, 51, 51);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+    z-index: 30;
+}
+
+.text-zone span{
+    font-size: 20px;
+}
 

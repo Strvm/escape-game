@@ -172,7 +172,43 @@ function changeFrame(clueName){
 document.querySelector('.nextRoom').addEventListener('click', next);
 
 document.getElementById('rooms').addEventListener('click', clueClick);
+
+
+let i = 0;
+let text;
+let textChars;
+function typeWriter(textid, wipe, speed) {
+    text = document.querySelector(textid);
+    if (text == null){
+        console.log('Given paragraph ID is null.');
+        return;
+    }
+    if (!wipe){
+        textChars = text.textContent;
+        text.textContent = "";
+        wipe = true;
+    }
+    if (i < textChars.length) {
+      text.textContent += textChars.charAt(i);
+      i++;
+      setTimeout(function(){ typeWriter('.' + text.className, wipe, speed); }, speed);
+    }
+  }
+
+
+    document.querySelector(".homeButton").onclick = function(){
+    let homespan = document.querySelector(".homepage-door")
+    document.querySelector(".homeText").style.display = "block"
+    setTimeout(function(){document.querySelector(".homeText").style.display ="none";},3000);
+    typeWriter(".porte",false, 50)
+    homespan.style.display = "block"
+    setTimeout(function(){homespan.style.display ="none";},3000);
+
+
+
 }
+
+
 
 
 
