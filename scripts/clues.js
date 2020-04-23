@@ -38,6 +38,7 @@ function playSound(sound){
         throwError(`Failed to play find sound at: ${audio.src}`);
         return false;
     };
+    audio.volume = 0.5;
     audio.play();
 }
 
@@ -51,11 +52,11 @@ function changeFrame(clueName){
 
     if (clueName == 'door') {
         if(foundKey){
-            goToRoom(getNextRoom(getCurrentRoom()));
             foundKey = false;
             isLocked = true;
             lastInteraction = '';
             playSound('key-open.mp3');
+            setTimeout(function(){goToRoom(getNextRoom(getCurrentRoom()))},2000)
             return;
         }
         return;
@@ -153,26 +154,30 @@ function changeFrame(clueName){
     }
 
     document.addEventListener('keydown', (event) => {
-        let player = document.getElementById("player");
+        const player = document.getElementById("player");
         if (event.key == "ArrowUp") {
-            player.style.top = (parseFloat(player.style.top) - 1) + "%";
+            player.style.top = (parseFloat(player.style.top) - 0.5) + "%";
         }
         else if (event.key == "ArrowDown") {
-            player.style.top = (parseFloat(player.style.top) + 1) + "%";
+            player.style.top = (parseFloat(player.style.top) + 0.5) + "%";
         }
         else if (event.key == "ArrowLeft") {
-            player.style.left = (parseFloat(player.style.left) - 1) + "%";
+            player.style.left = (parseFloat(player.style.left) - 0.5) + "%";
         }
         else if (event.key == "ArrowRight") {
-            player.style.left = (parseFloat(player.style.left) + 1) + "%";
+            player.style.left = (parseFloat(player.style.left) + 0.5) + "%";
         }
-        let labyrinthe = document.getElementById("labyrinthe");
+        const labyrinthe = document.querySelector("#labyrinthe");
+        console.log();
+        setTimeout(function(){ 
         if (!isinside(labyrinthe.getBoundingClientRect(), player.getBoundingClientRect())) {
             player.style.top = "90%";
             player.style.left = "5%";
             return;
         }
-        let walls = document.getElementsByClassName("wall");
+        }, 10);
+        
+        const walls = document.getElementsByClassName("wall");
         for (let i = 0; i < walls.length; i++) {
             if (iscolliding(walls[i].getBoundingClientRect(), player.getBoundingClientRect())) {
                 player.style.top = "90%";
@@ -180,7 +185,7 @@ function changeFrame(clueName){
                 return;
             }
         }
-        let finish = document.getElementById("finish");
+        const finish = document.querySelector("#finish");
         if (iscolliding(finish.getBoundingClientRect(), player.getBoundingClientRect())) {
             // TODO WIN
             labyrinthe.style.visibility = "hidden";

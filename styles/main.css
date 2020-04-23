@@ -21,8 +21,6 @@ body{
 
 .room{
     position: absolute;
-    left:0; right:0;
-    top:0; bottom:0;
     margin:auto;
     width: 960px;
     height: 714.41px;
@@ -430,6 +428,7 @@ body{
     }
 }
 
+
 .home .text{
     left: 5%;
     top:0%;
@@ -548,6 +547,7 @@ body{
     z-index: 42;
     background-color: #0F0904;
     display: none;
+    
 }
 
 #finish {
@@ -617,6 +617,17 @@ body{
     animation: marquee 25s linear infinite;
 }
 
+
+.ghost{
+    width: 100px;
+    height: 80px;
+    opacity: 0.7;
+    margin: 0;
+    z-index: 1000;
+    pointer-events: none
+}
+
+
 @keyframes marquee {
     0% 
     {
@@ -628,3 +639,4 @@ body{
         transform: translate3d(-200vw, 0, 0);
     }
 }
+
