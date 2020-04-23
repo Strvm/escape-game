@@ -38,6 +38,7 @@ function playSound(sound){
         throwError(`Failed to play find sound at: ${audio.src}`);
         return false;
     };
+    audio.volume = 0.5;
     audio.play();
 }
 
@@ -51,11 +52,11 @@ function changeFrame(clueName){
 
     if (clueName == 'door') {
         if(foundKey){
-            goToRoom(getNextRoom(getCurrentRoom()));
             foundKey = false;
             isLocked = true;
             lastInteraction = '';
             playSound('key-open.mp3');
+            setTimeout(function(){goToRoom(getNextRoom(getCurrentRoom()))},2000)
             return;
         }
         return;
