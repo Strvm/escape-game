@@ -615,6 +615,18 @@ body{
 /***************************
     safeVault Mini-game
 ***************************/
+
+.safeVaultContainer{
+    position: absolute;
+    width: 960px;
+    height: 714.41px;
+    z-index: 130;
+    background-color: #0F0904;
+    display: none;
+    top: 10%;
+    left: 10%;
+}
+
 .table {
     height: 100%;
     width: 100%;

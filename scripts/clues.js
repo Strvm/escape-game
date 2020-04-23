@@ -127,6 +127,9 @@ function changeFrame(clueName){
                     }
                     break;
                 case 'room level-3':
+                    if (clueName == 'coffreOuvert') {
+                        document.querySelector(`.safeVaultContainer`).style.display = 'block';
+                    }
                     break;
                 case 'room level-4':
                     if (clueName == 'placard') {
