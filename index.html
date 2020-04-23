@@ -14,10 +14,10 @@
         <div class="fog-container">
           <div class="fog-img fog-img-first"></div>
           <div class="fog-img fog-img-second"></div>
-          <div class="fog-img ghost"></div>
-          img.src.ee
+          <div class="fog-img fog-img-third"></div>
         </div>
       </section>
+   <img src="images/ghostwithoutshadow.svg" alt="" class="ghost">
     <section class="home">
             <h1 class="mainTitle" data-aos="fade-right" data-aos-duration="2500">The Escape Game</h1>
             <h6 class="subTitle" data-aos="fade-right" data-aos-duration="2000" data-aos-anchor=".mainTitle">Episode 1: La maison hantée</h6>
@@ -27,6 +27,7 @@
     </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        let beingMoved = false;
     document.querySelector('.homeButton').addEventListener("click", function(e) {
         event.preventDefault();
         const img = new Image();
@@ -45,6 +46,40 @@
             window.location.href = "./pages/game.html";
         }
     });
+
+
+    const ghost = document.querySelector(".ghost");
+		document.addEventListener("mousemove", getMouse); 
+
+
+		ghost.style.position = "absolute"; //css		
+		let ghostPos = {x:0, y:0};
+
+		setInterval(followMouse, 50);
+		
+		let mouse = {x:0, y:0}; //mouse.x, mouse.y
+		
+		function getMouse(e){
+            
+			mouse.x = e.pageX;
+			mouse.y = e.pageY;
+
+		}
+		
+		function followMouse(){
+			//1. find distance X , distance Y
+			const distX = mouse.x - ghostPos.x;
+			const distY = mouse.y - ghostPos.y;
+			//Easing motion
+       //Progressive reduction of distance 
+            ghostPos.x += distX/80;
+            ghostPos.y += distY/32;
+			
+			ghost.style.left = ghostPos.x + "px";
+			ghost.style.top = ghostPos.y + "px";
+         
+        }
+	
     </script>
     <script>
         AOS.init();

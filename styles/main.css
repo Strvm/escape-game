@@ -21,8 +21,6 @@ body{
 
 .room{
     position: absolute;
-    left:0; right:0;
-    top:0; bottom:0;
     margin:auto;
     width: 960px;
     height: 714.41px;
@@ -436,6 +434,7 @@ left:200px;
     }
 }
 
+
 .home .text{
     left: 5%;
     top:0%;
@@ -623,14 +622,16 @@ left:200px;
     animation: marquee 25s linear infinite;
 }
 
+
 .ghost{
-    background: url("../images/ghostwithoutshadow.svg");
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-position: center;
-    animation: marquee 15s linear infinite;
-    z-index: 100;
+    width: 100px;
+    height: 80px;
+    opacity: 0.7;
+    margin: 0;
+    z-index: 1000;
+    pointer-events: none
 }
+
 
 @keyframes marquee {
     0% 
@@ -643,3 +644,4 @@ left:200px;
         transform: translate3d(-200vw, 0, 0);
     }
 }
+
