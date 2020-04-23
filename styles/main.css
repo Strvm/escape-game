@@ -292,7 +292,6 @@ body{
     position: absolute;
     width: 20px;
     height: 20px;
-    background: red;
     z-index: 9;
 }
 
@@ -545,7 +544,6 @@ body{
     top:0px;
     left:0px;
     height: 6px;
-    background-color: red;
     z-index: 10;
     transition-property: width;
     transition-duration: 1s;
@@ -599,6 +597,7 @@ body{
     z-index: 130;
     background-color: #0F0904;
     display: none;
+    overflow: hidden;
 }
 
 #labyrinthe {
@@ -621,7 +620,6 @@ body{
     width: 960px;
     height: 714.41px;
     z-index: 130;
-    background-color: #0F0904;
     display: none;
     top: 10%;
     left: 10%;

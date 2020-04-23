@@ -1,7 +1,7 @@
 
-Save New Duplicate & Edit Just Text
 "use strict"
 {
+const { setFoundKey } = ESCAPE_ROOM;
 const pin = 123
 let enterCode = '';
 
@@ -24,6 +24,10 @@ document.querySelector('.numbers').addEventListener('click', (event) => {
 		document.querySelector(`.fields .c${lengthCode} .numberfield`).classList.add('active')
 		document.querySelector('.numbers').classList.add('hide')
 		document.querySelector('.text').innerHTML = `<strong>Bravo ! Vous avez entré le bon code !</strong>`
+		setTimeout(function () {
+			document.querySelector(`.safeVaultContainer`).style.display = 'none';
+		}, 1000)
+		setFoundKey(true);
 		} 
 		else {
 		// If the code entered is wrong
