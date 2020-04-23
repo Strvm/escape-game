@@ -299,7 +299,8 @@ body{
 .level-3 .coussin1{
     width: 112px;
     height: 50px;
-    position: absolute;    top: 408px;
+    position: absolute;    
+    top: 408px;
     left: 72px;
     transform: rotate(18deg);
 }
