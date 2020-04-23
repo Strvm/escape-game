@@ -542,12 +542,13 @@ body{
 
 .barre{
     position: absolute;
-    top:0px;
+    top:0%;
     left:0px;
     height: 6px;
     z-index: 10;
     transition-property: width;
     transition-duration: 1s;
+    background-color: red;
 }
 
 
