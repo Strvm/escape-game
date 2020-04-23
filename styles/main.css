@@ -592,6 +592,14 @@ body{
     font-style: normal;
 }
 
+.labyrinthContainer{
+    position: absolute;
+    width: 960px;
+    height: 714.41px;
+    z-index: 130;
+    background-color: #0F0904;
+    display: none;
+}
 
 
 #labyrinthe {
@@ -601,8 +609,7 @@ body{
     width: 768px;
     height: 571px;
     z-index: 42;
-    background-color: #0F0904;
-    display: none;
+    background-color: white;
     
 }
 
@@ -675,10 +682,13 @@ body{
 
 
 .ghost{
+    position: absolute;
     width: 100px;
     height: 80px;
     margin: 0;
     z-index: 1000;
+    top: 50%;
+    left: 50%;
     pointer-events: none;
     animation: spawn 5s linear forwards;
 }

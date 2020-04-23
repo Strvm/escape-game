@@ -1,7 +1,9 @@
 "use strict"
 {
-let { rooms,throwError, getCurrentRoom, currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid} = ESCAPE_ROOM;
-
+let { rooms,throwError , getCurrentRoom, currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid} = ESCAPE_ROOM;
+Object.assign(ESCAPE_ROOM, {
+    setFoundKey
+  });
 let clueName;
 let foundKey = false;
 let lastInteraction = '';
@@ -20,7 +22,9 @@ const next = (event) => {
     goToRoom(getNextRoom(getCurrentRoom()));
  }
  
-
+function setFoundKey(test){
+    foundKey = test;
+}
 
 function getClueName(clueName){
     return clueName.replace('clue ', '');
@@ -82,7 +86,7 @@ function changeFrame(clueName){
     }
     console.log(clueName);
     
-    if (foundKey && getCurrentRoom() != 'room level-1'){
+    if (foundKey && getCurrentRoom() == 'room level-2'){
         img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}-nokey.svg`;
     }else{
         img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/${clueName}.svg`;
@@ -103,18 +107,34 @@ function changeFrame(clueName){
         }
     }else{
         img.onload = function(){ 
-            console.log(clueName);
-            if (getCurrentRoom() == 'room level-1') {    
-                if (foundHideSpot) {
-                    foundHideSpot = false;
-                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
-                }
-                if (clueName == 'keyHide') { 
-                    foundHideSpot = true;
-                    document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
-                }
-
-            }else{
+            switch(getCurrentRoom()){
+                case 'room level-1':
+                    if (getCurrentRoom() == 'room level-1') {    
+                        if (foundHideSpot) {
+                            foundHideSpot = false;
+                            document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
+                        }
+                        if (clueName == 'keyHide') { 
+                            foundHideSpot = true;
+                            document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
+                        }
+        
+                    }
+                    break;
+                case 'room level-2':
+                    if (clueName == 'tireBouchon' && isLocked) {
+                        isLocked = false;
+                    }
+                    break;
+                case 'room level-3':
+                    break;
+                case 'room level-4':
+                    if (clueName == 'placard') {
+                        document.querySelector(`.labyrinthContainer`).style.display = 'block';
+                    }
+                    break;
+            }
+            if(getCurrentRoom() != 'room level-1'){
                 if (foundHideSpot) {
                     foundHideSpot = false;
                     document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
@@ -129,13 +149,13 @@ function changeFrame(clueName){
                     document.querySelector(`.level-${getRoomId(getCurrentRoom())} .key`).style.display = 'block';
                     document.querySelector(`.level-${getRoomId(getCurrentRoom())} .${clueName}`).style.zIndex = '5';
                 }
-                if (clueName == 'tireBouchon' && isLocked && getCurrentRoom() != 'room level-1') {
-                    isLocked = false;
-                }
+                
+            }
+            level.style.backgroundImage = `url("${img.src}")`;
             }
 
-            level.style.backgroundImage = `url("${img.src}")`;
-        }
+            
+        
         if(clueName == 'keyHide' && foundKey && getCurrentRoom() == 'room level-1'){
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
             img.onload = function(){ 
@@ -143,73 +163,6 @@ function changeFrame(clueName){
             }
         }
     }
-
-
-    function iscolliding(a, b) {
-        return !(
-            ((a.y + a.height) < (b.y)) ||
-            (a.y > (b.y + b.height)) ||
-            ((a.x + a.width) < b.x) ||
-            (a.x > (b.x + b.width))
-        );
-    }
-
-    function isinside(a, b) {
-        if (a.top <= b.top && a.left <= b.left && a.right >= b.right && a.bottom >= b.bottom)return true;
-        return (false); 
-    }
-
-    document.addEventListener('keydown', (event) => {
-        const player = document.getElementById("player");
-        if (event.key == "ArrowUp") {
-            player.style.top = (parseFloat(player.style.top) - 0.5) + "%";
-        }
-        else if (event.key == "ArrowDown") {
-            player.style.top = (parseFloat(player.style.top) + 0.5) + "%";
-        }
-        else if (event.key == "ArrowLeft") {
-            player.style.left = (parseFloat(player.style.left) - 0.5) + "%";
-        }
-        else if (event.key == "ArrowRight") {
-            player.style.left = (parseFloat(player.style.left) + 0.5) + "%";
-        }
-        const labyrinthe = document.querySelector("#labyrinthe");
-        console.log();
-        setTimeout(function(){ 
-        if (!isinside(labyrinthe.getBoundingClientRect(), player.getBoundingClientRect())) {
-            player.style.top = "90%";
-            player.style.left = "5%";
-            return;
-        }
-        }, 10);
-        
-        const walls = document.getElementsByClassName("wall");
-        for (let i = 0; i < walls.length; i++) {
-            if (iscolliding(walls[i].getBoundingClientRect(), player.getBoundingClientRect())) {
-                player.style.top = "90%";
-                player.style.left = "5%";
-                return;
-            }
-        }
-        const finish = document.querySelector("#finish");
-        if (iscolliding(finish.getBoundingClientRect(), player.getBoundingClientRect())) {
-            // TODO WIN
-            labyrinthe.style.visibility = "hidden";
-            console.log("WIN");
-            
-            return;
-        }
-    });
-
-
-
-
-
-
-
-
-
-
 
 }
 

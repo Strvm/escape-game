@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
-    <title>Jeux</title>
+    <title>Escape Room</title>
 </head>
 <body>
     <div class="nextRoom">Next</div>
@@ -64,6 +64,8 @@
             <div class="clue tiroir5"></div>
             <div class="clue key"></div>
             <div class="clue door"></div>
+        </section>
+        <div class="labyrinthContainer">
             <div id="labyrinthe">
                 <div id="player" style="top: 90%;left: 2%;"></div>
                 <div id="finish"></div>
@@ -74,12 +76,13 @@
                 <div class="wall" style="top: 10%;left: 42%;width: 155px;height: 90px;"></div>
                 <div class="wall" style="top: 39%;left: 58%;width: 155px;height: 90px;"></div>
             </div>
-        </section>
+        </div>
         <section class="room level-4 hidden">
             <h1>Room4</h1>
             <div class="clue douche"></div>
-            <div class="clue placard"></div>
+            <div class="clue key"></div>
             <div class="clue rideau"></div>
+            <div class="clue placard"></div>
             <div class="clue robinet"></div>
             <div class="clue tapis"></div>
             <div class="clue toilette"></div>
@@ -93,5 +96,6 @@
     </script>
     <script src="../scripts/rooms.js"></script>
     <script src="../scripts/clues.js"></script>
+    <script src="../scripts/labyrinth.js"></script>
 </body>
 </html>
