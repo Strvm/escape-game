@@ -601,7 +601,6 @@ body{
     display: none;
 }
 
-
 #labyrinthe {
     position: absolute;
     top: 10%;
@@ -611,6 +610,220 @@ body{
     z-index: 42;
     background-color: white;
     
+}
+
+/***************************
+    safeVault Mini-game
+***************************/
+.table {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .cell {
+    width: 100%;
+    text-align: center;
+    padding-top:20px;
+  }
+  
+  
+  /*----------------------------
+            Locker Code
+  ----------------------------*/
+  
+.pincode{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    height: 580px;
+    width: 700px;
+    background-color: #546583;
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
+  
+}
+  
+.numbers{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 300px;
+    margin: 0 auto;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    opacity: 1;
+}
+  
+.numbers.hide{
+    opacity: 0.2;
+}
+  
+.pincode .button{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 50px;
+    border-radius: 100%;
+    opacity: 1;
+    outline: 0;
+    border: 2px solid #272a2f;
+}
+  
+.pincode .button:active{
+    background-color: rgba(0, 0, 0, 0.6);
+    outline: 0;
+}
+  
+.fields{
+    max-width: 200px;
+    padding: 0 20px;
+    margin: 50px auto;
+    position: relative;
+    display: block;
+}
+  
+.fields .numberfield{
+    text-align: center;
+}
+  
+.fields .numberfield span{
+    height: 10px;
+    width: 10px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    border-radius: 100%;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+  
+.fields .numberfield.active span{
+    background-color: #fff;
+}
+  
+.fields .numberfield.right span{
+    background-color: #272a2f;
+    border-color: #272a2f;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+  
+  
+/*--------------
+      Grid
+--------------*/
+  
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+}
+  
+.gridBox{
+    margin: 5px 10px;
+}
+  
+.miss{
+    -webkit-animation: miss .8s ease-out 1;
+    animation: miss .8s ease-out 1;
+}
+  
+@-webkit-keyframes miss{
+    0%{
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    10%{
+      -webkit-transform: translate(-25px, 0);
+      transform: translate(-25px, 0);
+    }
+    20%{
+      -webkit-transform: translate(25px, 0);
+      transform: translate(25px, 0);
+    }
+    30%{
+      -webkit-transform: translate(-20px, 0);
+      transform: translate(-20px, 0);
+    }
+    40%{
+      -webkit-transform: translate(20px, 0);
+      transform: translate(20px, 0);
+    }
+    50%{
+      -webkit-transform: translate(-10px, 0);
+      transform: translate(-10px, 0);
+    }
+    60%{
+      -webkit-transform: translate(10px, 0);
+      transform: translate(10px, 0);
+    }
+    70%{
+      -webkit-transform: translate(-5px, 0);
+      transform: translate(-5px, 0);
+    }
+    80%{
+      -webkit-transform: translate(5px, 0);
+      transform: translate(5px, 0);
+    }
+    100%{
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+}
+  
+@keyframes miss{
+    0%{
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    10%{
+      -webkit-transform: translate(-25px, 0);
+      transform: translate(-25px, 0);
+    }
+    20%{
+      -webkit-transform: translate(25px, 0);
+      transform: translate(25px, 0);
+    }
+    30%{
+      -webkit-transform: translate(-20px, 0);
+      transform: translate(-20px, 0);
+    }
+    40%{
+      -webkit-transform: translate(20px, 0);
+      transform: translate(20px, 0);
+    }
+    50%{
+      -webkit-transform: translate(-10px, 0);
+      transform: translate(-10px, 0);
+    }
+    60%{
+      -webkit-transform: translate(10px, 0);
+      transform: translate(10px, 0);
+    }
+    70%{
+      -webkit-transform: translate(-5px, 0);
+      transform: translate(-5px, 0);
+    }
+    80%{
+      -webkit-transform: translate(5px, 0);
+      transform: translate(5px, 0);
+    }
+    100%{
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
 }
 
 #finish {
