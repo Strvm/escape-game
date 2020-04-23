@@ -552,6 +552,7 @@ left:200px;
     height: 571px;
     z-index: 42;
     background-color: #0F0904;
+    display: none;
     
 }
 
