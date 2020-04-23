@@ -10,8 +10,8 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="text-zone homeText">
-        <span class="homepage-door text">“allons voir ce qui se cache derrière cette porte...”</span>
+    <div class="dialogues-zone">
+        <span class="homeText text hidden">“allons voir ce qui se cache derrière cette porte...”</span>
     </div>
     <section class="fog">
         <div class="fog-container">
@@ -24,67 +24,13 @@
     <section class="home">
             <h1 class="mainTitle" data-aos="fade-right" data-aos-duration="2500">The Escape Game</h1>
             <h6 class="subTitle" data-aos="fade-right" data-aos-duration="2000" data-aos-anchor=".mainTitle">Episode 1: La maison hantée</h6>
-            <p class="text" data-aos="fade-right" data-aos-duration="2500" data-aos-anchor=".mainTitle" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos optio, exercitationem illo ullam reiciendis. Officiis consequuntur commodi magnam doloribus quis, adipisci fugit dignissimos, tempore velit aut est deleniti. Nisi?`</p>
-            <a href="javascript:void(0)" class="homeButton" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor=".mainTitle">J'OSE</a>
-            <div class="door"></div>
+            <p class="homeText" data-aos="fade-right" data-aos-duration="2500" data-aos-anchor=".mainTitle" >Vous avez été défié par vos amis à résoudre les mystères de la maison hantée. Votre défi, si vous l’acceptez, est de trouver la sortie.  Alors, oserez-vous vous prêter au jeu de cette bâtisse ?</p>
+            <a href="javascript:(0)" class="homeButton" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor=".mainTitle">J'OSE</a>
+            <div class="clue door"></div>
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        let beingMoved = false;
-    document.querySelector('.homeButton').addEventListener("click", function(e) {
-        event.preventDefault();
-        const img = new Image();
-        img.src = `./images/frames/home/homeOpen.svg`;
-        document.querySelector('.door').style.display = 'block'
-        img.onload = function(){ 
-            document.querySelector('.home').style.backgroundImage = 'url("./images/frames/home/homeOpen.svg")'
-            const audio = new Audio(`./sounds/door-open.mp3`);
-            audio.volume = 0.05
-            audio.play();
-        }
-    });
-
-    document.querySelector('.door').addEventListener("click", function(e) {
-        if (document.querySelector('.door').style.display != 'none'){
-            window.location.href = "./pages/game.html";
-        }
-    });
-
-
-    const ghost = document.querySelector(".ghost");
-		document.addEventListener("mousemove", getMouse); 
-
-
-		ghost.style.position = "absolute"; //css		
-		let ghostPos = {x:0, y:0};
-
-		setInterval(followMouse, 50);
-		
-		let mouse = {x:0, y:0}; //mouse.x, mouse.y
-		
-		function getMouse(e){
-            
-			mouse.x = e.pageX;
-			mouse.y = e.pageY;
-
-		}
-		
-		function followMouse(){
-			//1. find distance X , distance Y
-			const distX = mouse.x - ghostPos.x;
-			const distY = mouse.y - ghostPos.y;
-			//Easing motion
-       //Progressive reduction of distance 
-            ghostPos.x += distX/80;
-            ghostPos.y += distY/32;
-			
-			ghost.style.left = ghostPos.x + "px";
-			ghost.style.top = ghostPos.y + "px";
-         
-        }
-	
-    </script>
+    <script src="./scripts/home.js"></script>
     <script>
         AOS.init();
     </script>

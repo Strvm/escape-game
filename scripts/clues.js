@@ -1,7 +1,7 @@
 "use strict"
 {
 let { rooms,throwError , getCurrentRoom, currentRoom, currentLevel, getNextRoom, getRoomId, goToRoom, getMaxRooms, isRoomValid} = ESCAPE_ROOM;
-Object.assign(ESCAPE_ROOM, {setFoundKey});
+Object.assign(ESCAPE_ROOM, {setFoundKey, typeWriter});
 let clueName;
 let foundKey = false;
 let lastInteraction = '';
@@ -152,6 +152,13 @@ function changeFrame(clueName){
                 }
                 
             }
+            try {                
+                const lastDialogue = document.querySelector(lastText);
+                lastDialogue.classList.add('hidden');
+                clearTimeout(timeOut);
+            } catch (error) {                
+            }
+            typeWriter(`.dialogues-zone .${clueName}`, false, 50)
             level.style.backgroundImage = `url("${img.src}")`;
             }
 
@@ -177,44 +184,41 @@ document.getElementById('rooms').addEventListener('click', clueClick);
 let i = 0;
 let text;
 let textChars;
-function typeWriter(textid, wipe, speed) {
+let timeOut;
+let lastText = ''
+function typeWriter(textid, wipe, speed) {    
+    textid = textid.split('text')[0] 
     text = document.querySelector(textid);
+    
     if (text == null){
         console.log('Given paragraph ID is null.');
         return;
     }
     if (!wipe){
+        lastText = textid;
         textChars = text.textContent;
         text.textContent = "";
         wipe = true;
+        text.style.display = 'block'
     }
+    text.classList.remove('hidden');
     if (i < textChars.length) {
       text.textContent += textChars.charAt(i);
+      //console.log(text.textContent);
+      
       i++;
-      setTimeout(function(){ typeWriter('.' + text.className, wipe, speed); }, speed);
+      
+      setTimeout(function(){ typeWriter('.dialogues-zone .' + text.className, wipe, speed); }, speed);
+    }else{
+        timeOut = setTimeout(function(){ text.classList.add('hidden');},4000);
+        i = 0;
     }
   }
 
 
-    document.querySelector(".homeButton").onclick = function(){
-    let homespan = document.querySelector(".homepage-door")
-    document.querySelector(".homeText").style.display = "block"
-    setTimeout(function(){document.querySelector(".homeText").style.display ="none";},3000);
-    typeWriter(".porte",false, 50)
-    homespan.style.display = "block"
-    setTimeout(function(){homespan.style.display ="none";},3000);
 
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
