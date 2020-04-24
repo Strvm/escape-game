@@ -90,8 +90,6 @@ body{
     visibility:visible;
 }
 
-
-
 .clue:hover{
    cursor: help;
 }
@@ -202,6 +200,15 @@ body{
     height: 40px;
     left: 161px;
     top: 159px;
+    z-index: 10;
+}
+
+.level-2 .witch{
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    left: 7%;
+    top: 55%;
     z-index: 10;
 }
 

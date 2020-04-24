@@ -25,6 +25,11 @@
     let tireBouchonFound = false;
     let isOpen = false;
 
+
+    /*
+        Main event. With this click event we listen to see if the element clicked contains the class "clue".
+        If it does we try to change to the correct frame.
+    */
     const clueClick = (event) => {
         if (!isClue(event.target.className)) return;
         clueName = getClueName(event.target.className);
@@ -32,20 +37,31 @@
         lastInteraction = clueName;
     }
 
-
-    function setFoundKey(test) {
-        foundKey = test;
+    /*
+        setFoundKey function. This function is mostly use in other Javascript files to set if the user has found/won the key.
+    */
+    function setFoundKey(bool) {
+        foundKey = bool;
     }
 
+    /*
+        getClueName function. Used to replace "clue" from class name and only get the specific clue name.
+    */
     function getClueName(clueName) {
         return clueName.replace('clue ', '');
     }
 
+    /*
+        isClue function. Checks if an element is a clue by checking if it has the "clue" class.
+    */
     function isClue(clueName) {
         if (clueName.includes('clue')) return true;
         return false;
     }
 
+    /*
+        isKey function. Checks if an element is a clue by checking if it has the "key" class.
+    */
     function isKey(clueName) {
         if (clueName == 'key') {
             return true;
@@ -53,6 +69,9 @@
         return false;
     }
 
+    /*
+        playSound function. Is used to play a specific sounds stored in ./sounds. 
+    */
     function playSound(sound) {
         const audio = new Audio(`../sounds/${sound}`);
         audio.onerror = function() { // Failed to load
@@ -63,6 +82,9 @@
         audio.play();
     }
 
+    /*
+        clearText function. Is used to make current type writing text visible on screen dissapear. 
+    */
     function clearText(){
         try {
             const lastDialogue = document.querySelector(lastText);
@@ -73,6 +95,10 @@
         } catch (error) {}   
     }
 
+    /*
+        changeFrame function. Main method of file. Is used to change the frame of the room. Also deals with a bunch
+        of specific stuff for each room.
+    */
     function changeFrame(clueName) {
         const level = document.querySelector(`.level-${getRoomId(getCurrentRoom())}`)
         const img = new Image();
