@@ -4,71 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='icon' href='../images/favicon.svg' type='image/x-icon'/ >
+    <link rel='icon' href='../images/favicon.svg' type='image/x-icon' />
 
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <title>Escape Room</title>
 </head>
 <body>
-    <div class="nextRoom">Next</div>
-
+    <div class="music"><audio src="../sounds/background-sound.ogg" autoplay></audio></div>
     <section class="fog">
         <div class="fog-container">
             <div class="fog-img fog-img-first"></div>
             <div class="fog-img fog-img-second"></div>
         </div>
     </section>
-    <img src="../images/clef-stuff.svg"  class="key-success" alt="">
-    <img src="../images/tirebouchon.svg"  class="tirebouchon-success" alt="">
+    <img src="../images/clef-stuff.svg" class="key-success" alt="">
+    <img src="../images/tirebouchon.svg" class="tirebouchon-success" alt="">
     <div class="full-stuff">
-      <img src="../images/tirebouchon.svg"  class="tirebouchon-stuff stuff" alt="">
-      <img src="../images/clef-stuff.svg" class="key-stuff stuff" alt="">  
+        <img src="../images/tirebouchon.svg" class="tirebouchon-stuff stuff" alt="">
+        <img src="../images/clef-stuff.svg" class="key-stuff stuff" alt="">
     </div>
     <div class="dialogues-zone">
-      <span class="cadre text hidden">“oh dommage, il n’y a rien ici..”</span>
-      <span class="coussin text hidden">“Une clé !”</span>
-      <span class="tableau text hidden">"Aaaah !”</span>
-      <span class="tapis text hidden">“Il n’y a que de la poussière ici...”</span>
-      <span class="tiroir-bas text hidden">"Rien ”</span>
-      <span class="tiroir-haut tex hidden">"Rien d'intéressant ici”</span>
-      <span class="vase text hidden">"Pas de fleurs...”</span>
-      <span class="tiroir1 text hidden">"Rien ici..."</span>
-      <span class="tiroir2 text hidden">"Rien ici..."</span>
-      <span class="tiroir4 text hidden">"Rien ici..."</span>
-      <span class="tiroir5 text hidden">"Rien ici..."</span>
-      <span class="tiroirTireBouchon text hidden">"Oh un tire-bouchon, il pourrait m'être utile...”</span>
-      <span class="tiroir3 text hidden">"Dommage, rien ici non plus."</span>
-      <span class="bouteille-fermé text hidden">"Il me faudrait quelque chose pour l’ouvrir..."</span>
-      <span class="bouteille-ouverte tex hidden">"Une clé ! On peut continuer."</span>
-      <span class="frigo text hidden">"Aaaah ! Une souris !"</span>
-      <span class="assiette text hidden">"Il n’y a que des bestioles dégoûtantes ici !"</span>
-      <span class="robinet text hidden">"L’eau ne semble pas très propre..."</span>
-      <span class="armoire text hidden">"un vampire ! je vais pas le déranger plus que ça..."</span>
-      <span class="cadre1 text hidden">"Aaaah ! Mes c’est quoi toutes ces bestioles ?!"</span>
-      <span class="cadre2 text hidden">"Il faudrait bien passer un coup de plumeau ici…"</span>
-      <span class="cadre3 text hidden">"Comment peut-il être arrivé ici ?"</span>
-      <span class="livre text hidden">"Roméo et Juliette… Un bel ouvrage"</span>
-      <span class="Coussin-chambre text hidden">"Ça n’a pas l’air très confortable…"</span>
-      <span class="Tiroir-chambre text hidden">"Rien d’intéressant ici…"</span>
-      <span class="Coffre-fort text hidden"> “Il faudrait que je trouve le code…”</span>
-      <span class="Coffre-fort-raté text hidden">"Ça n’a pas l’air d’être ça..."</span>
-      <span class="Coffre-fort-réussi text hidden">"J’ai trouvé ! À moi la clé"</span>
-      <span class="toilettes text hidden">"ça fait un moment qu’elles n’ont pas été nettoyées…"</span>
-      <span class="lavabo text hidden">"L’eau ne semble pas très propre…"</span>
-      <span class="rideau text hidden">"Aaaaah ! La mort ! Fuyons d’ici !"</span>
-      <span class="douche text hidden">"L’eau ne semble pas très propre…"</span>
-      <span class="tapis text hidden">"Je ne préfère pas savoir ce qu’il s’est passé ici…"</span>
-      <span class="meuble text hidden">"Tiens ? Une boîte ?"</span>
-      <span class="Mini-jeu text hidden">"Oh non… Je n’aime pas casse s-tête"</span>
-      <span class="Mini-jeu-raté text hidden">"Et mince !"</span>
-      <span class="Mini-jeu-réussi text hidden">"À moi la clé ! Fuyons d’ici !"</span>
+        <span class="keyFound text hidden">“Une cléf! Essayons d'ouvrir la porte avec!”</span>
+        <span class="cadre text hidden">“oh dommage, il n’y a rien ici..”</span>
+        <span class="coussin text hidden">“Une clé !”</span>
+        <span class="tableau text hidden">"Aaaah !”</span>
+        <span class="tapis text hidden">“Il n’y a que de la poussière ici...”</span>
+        <span class="tiroir-bas text hidden">"Rien ”</span>
+        <span class="tiroir-haut text hidden">"Rien d'intéressant ici”</span>
+        <span class="vase text hidden">"Pas de fleurs...”</span>
+        <span class="doorOpen2 text hidden">"vite passons à la deuxième pièce!”</span>
+        <span class="doorOpen3 text hidden">"vite passons à la troisième pièce, nous avons presque finis!”</span>
+        <span class="doorOpen4 text hidden">"vite passons à la pièce suivante, ça sent la fin!”</span>
+        <span class="tiroir1 text hidden">"Rien ici..."</span>
+        <span class="tiroir2 text hidden">"Rien ici..."</span>
+        <span class="tiroir4 text hidden">"Rien ici..."</span>
+        <span class="tiroir5 text hidden">"Rien ici..."</span>
+        <span class="tiroirTireBouchon text hidden">"Oh un tire-bouchon, il pourrait m'être utile...”</span>
+        <span class="tiroir3 text hidden">"Dommage, rien ici non plus."</span>
+        <span class="bouteille-fermé text hidden">"Il me faudrait quelque chose pour l’ouvrir..."</span>
+        <span class="bouteille-ouverte tex hidden">"Une clé ! On peut continuer."</span>
+        <span class="frigo text hidden">"Aaaah ! Une souris !"</span>
+        <span class="assiette text hidden">"Il n’y a que des bestioles dégoûtantes ici !"</span>
+        <span class="robinet text hidden">"L’eau ne semble pas très propre..."</span>
+        <span class="armoireZombie text hidden">"un zombie ! je vais pas le déranger plus que ça..."</span>
+        <span class="armoire text hidden">"un vampire ! je vais pas le déranger plus que ça..."</span>
+        <span class="cadre1 text hidden">"Aaaah ! Mes c’est quoi toutes ces bestioles ?!"</span>
+        <span class="cadre2 text hidden">"Il faudrait bien passer un coup de plumeau ici…"</span>
+        <span class="cadre3 text hidden">"Comment peut-il être arrivé ici ?"</span>
+        <span class="livre text hidden">"Roméo et Juliette… Un bel ouvrage"</span>
+        <span class="Coussin-chambre text hidden">"Ça n’a pas l’air très confortable…"</span>
+        <span class="Tiroir-chambre text hidden">"Rien d’intéressant ici…"</span>
+        <span class="Coffre-fort text hidden"> “Il faudrait que je trouve le code…”</span>
+        <span class="Coffre-fort-raté text hidden">"Ça n’a pas l’air d’être ça..."</span>
+        <span class="Coffre-fort-réussi text hidden">"J’ai trouvé ! À moi la clé"</span>
+        <span class="toilettes text hidden">"ça fait un moment qu’elles n’ont pas été nettoyées…"</span>
+        <span class="lavabo text hidden">"L’eau ne semble pas très propre…"</span>
+        <span class="rideau text hidden">"Aaaaah ! La mort ! Fuyons d’ici !"</span>
+        <span class="douche text hidden">"L’eau ne semble pas très propre…"</span>
+        <span class="tapis text hidden">"Je ne préfère pas savoir ce qu’il s’est passé ici…"</span>
+        <span class="meuble text hidden">"Tiens ? Une boîte ?"</span>
+        <span class="Mini-jeu text hidden">"Oh non… Je n’aime pas casse s-tête"</span>
+        <span class="Mini-jeu-raté text hidden">"Et mince !"</span>
+        <span class="Mini-jeu-réussi text hidden">"À moi la clé ! Fuyons d’ici !"</span>
     </div>
     <div class="barre"></div>
     <div id="rooms">
         <section class="room level-1 visible">
             <div class="clue vase"></div>
             <div class="clue keyHide"></div>
+            <div class="clue armoireZombie"></div>
             <div class="clue key"></div>
             <div class="clue door"></div>
             <div class="clue cadre"></div>
@@ -121,46 +126,52 @@
         </div>
         <div class="safeVaultContainer">
             <div class="pincode">
-              <button class="close">✕</button>
+                <button class="close">✕</button>
                 <div class="table">
-                  <div class="cell">
-          
-                      <div class="textContainer">
-                        <p class="codeText">
-                          <strong>Il faut entrer un code...</strong>
-                        </p>
-                        <div class="keyWin"></div>
-                      </div>
-            
-                    <div class="fields">
-                      <div class="grid">
-                        <div class="c0"><div class="gridBox numberfield"><span></span></div></div>
-                        <div class="c1"><div class="gridBox numberfield"><span></span></div></div>
-                        <div class="c2"><div class="gridBox numberfield"><span></span></div></div>
-                      </div>
+                    <div class="cell">
+
+                        <div class="textContainer">
+                            <p class="codeText">
+                                <strong>Il faut entrer un code...</strong>
+                            </p>
+                            <div class="keyWin"></div>
+                        </div>
+
+                        <div class="fields">
+                            <div class="grid">
+                                <div class="c0">
+                                    <div class="gridBox numberfield"><span></span></div>
+                                </div>
+                                <div class="c1">
+                                    <div class="gridBox numberfield"><span></span></div>
+                                </div>
+                                <div class="c2">
+                                    <div class="gridBox numberfield"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="numbers">
+                            <div class="grid">
+                                <div class="gridBox"><button class="button" value="1">1</button></div>
+                                <div class="gridBox"><button class="button" value="2">2</button></div>
+                                <div class="gridBox"><button class="button" value="3">3</button></div>
+
+                                <div class="gridBox"><button class="button" value="4">4</button></div>
+                                <div class="gridBox"><button class="button" value="5">5</button></div>
+                                <div class="gridBox"><button class="button" value="6">6</button></div>
+
+                                <div class="gridBox"><button class="button" value="7">7</button></div>
+                                <div class="gridBox"><button class="button" value="8">8</button></div>
+                                <div class="gridBox"><button class="button" value="9">9</button></div>
+
+                                <div class="gridBox"><button class="button" value="0">0</button></div>
+                            </div>
+                        </div>
+
                     </div>
-            
-                    <div class="numbers">
-                      <div class="grid">
-                        <div class="gridBox"><button class="button" value="1">1</button></div>
-                        <div class="gridBox"><button class="button" value="2">2</button></div>
-                        <div class="gridBox"><button class="button" value="3">3</button></div>
-            
-                        <div class="gridBox"><button class="button" value="4">4</button></div>
-                        <div class="gridBox"><button class="button" value="5">5</button></div>
-                        <div class="gridBox"><button class="button" value="6">6</button></div>
-            
-                        <div class="gridBox"><button class="button" value="7">7</button></div>
-                        <div class="gridBox"><button class="button" value="8">8</button></div>
-                        <div class="gridBox"><button class="button" value="9">9</button></div>
-            
-                        <div class="gridBox"><button class="button" value="0">0</button></div>
-                      </div>
-                    </div>
-            
-                  </div>
                 </div>
-              </div>
+            </div>
         </div>
         <section class="room level-4 hidden">
             <div class="clue douche"></div>
@@ -172,9 +183,11 @@
             <div class="clue toilette"></div>
             <div class="clue door"></div>
         </section>
+        <section class="room level-5 hidden">
+            <p class="finalText1" data-aos="fade-right" data-aos-duration="2500">Bravo! Vous avez réussi à trouver la sortie de la maison!</p>
+            <p class="finalText2" data-aos="fade-right" data-aos-duration="2500">Vous êtes un expert en énigmes donc pourquoi ne pas tenter votre chance pour gagner une partie d’escape game ? Une phrase s'est caché dans les images sera tu la retouver ? <br><br>Rendez-vous sur la page insta <a href="https://www.instagram.com/prizonersparis/">@prizonersparis</a> et <a href="https://www.instagram.com/theescaperoom/">@theescaperoom</a></p>
+        </section>
     </div>
-    <div class="roomSwitcher">Next Room</div>
-    <div class="frameSwitcher">Next Frame</div>
     <script type="text/javascript">
         window.ESCAPE_ROOM = {};
     </script>
@@ -182,7 +195,9 @@
     <script src="../scripts/clues.js"></script>
     <script src="../scripts/labyrinth.js"></script>
     <script src="../scripts/safeVault.js"></script>
-    
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
