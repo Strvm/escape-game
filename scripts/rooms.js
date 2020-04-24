@@ -55,7 +55,6 @@ function goToRoom(roomName){
     
     currentRoom = roomName.replace('.', '');
     barre.style.width = getRoomId(getCurrentRoom())*25 + "%"
-    console.log('After ' + currentRoom);
     
     for (const room of rooms) {
         if (getRoomId(room.className) == getRoomId(roomName)){
@@ -88,14 +87,6 @@ function isRoomValid(roomName){
         return false;
     } 
     return true;
-}
-
-/*
-    goToFrame function. Possible implementation to go to a specific frame of the room by changing it's background-image
-    url in the CSS.
-*/
-function goToFrame(){    
-    currentLevel.style.backgroundImage = "url('https://mdn.mozillademos.org/files/12700/basic-image.png')";
 }
 
 

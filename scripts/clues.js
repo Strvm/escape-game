@@ -155,8 +155,9 @@ function changeFrame(clueName){
             try {                
                 const lastDialogue = document.querySelector(lastText);
                 lastDialogue.classList.add('hidden');
+                lastDialogue.textContent = savedText;
                 clearTimeout(timeOut);
-            } catch (error) {                
+            } catch (error) {
             }
             typeWriter(`.dialogues-zone .${clueName}`, false, 50)
             level.style.backgroundImage = `url("${img.src}")`;
@@ -181,36 +182,36 @@ document.querySelector('.nextRoom').addEventListener('click', next);
 document.getElementById('rooms').addEventListener('click', clueClick);
 
 
-let i = 0;
-let text;
-let textChars;
-let timeOut;
-let lastText = ''
+let i = 0; //Our counter for the loop.
+let text; //Store the element.
+let textChars; //Stores the characters before they get removed.
+let timeOut; //Stores the setTimeOut so we can cancel it when we want.
+let lastText = ''//Stores the last element printed.
+let savedText = '';//Stores the last text contents printed.
 function typeWriter(textid, wipe, speed) {    
-    textid = textid.split('text')[0] 
+    textid = textid.split('text')[0] //Format the ID of the element we want to print.
     text = document.querySelector(textid);
-    
     if (text == null){
         console.log('Given paragraph ID is null.');
         return;
     }
-    if (!wipe){
+    if (!wipe){//This condition is only ran the first time you execute the function.
+        savedText = text.textContent;
         lastText = textid;
         textChars = text.textContent;
         text.textContent = "";
-        wipe = true;
-        text.style.display = 'block'
+        text.style.display = 'block'//Display the text container we want to print.
+      	wipe = true;
     }
-    text.classList.remove('hidden');
+    text.classList.remove('hidden');//Make the text visible
     if (i < textChars.length) {
-      text.textContent += textChars.charAt(i);
-      //console.log(text.textContent);
-      
+      text.textContent += textChars.charAt(i); //Adding new character to the content of the span     
       i++;
-      
       setTimeout(function(){ typeWriter('.dialogues-zone .' + text.className, wipe, speed); }, speed);
     }else{
-        timeOut = setTimeout(function(){ text.classList.add('hidden');},4000);
+        timeOut = setTimeout(function(){ text.classList.add('hidden');},4000);//Dissappear after 4s
+        textChars = null;
+        text = null;
         i = 0;
     }
   }
