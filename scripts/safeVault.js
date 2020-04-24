@@ -33,6 +33,8 @@ document.querySelector('.pincode').addEventListener('click', (event) => {
 			}, 1000)
 			setFoundKey(true);
 			document.querySelector('.key-stuff').style.display = "block";
+			document.querySelector('.key-success').style.display = "block"; 
+
 			} 
 			else {
 			// If the code entered is wrong.

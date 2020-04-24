@@ -1056,3 +1056,45 @@ body{
 .tirebouchon-stuff{
     display: none;
 }
+
+.key-success{
+    position: absolute;
+    top: 50%;
+    left:45%;
+    width: 200px;
+    animation: scale 1s ease-in forwards;
+    z-index: 30;
+    display: none;
+}
+
+.tirebouchon-success{
+    position: absolute;
+    top: 40%;
+    left:45%;
+    width: 200px;
+    animation: scale 1s ease-in forwards;
+    z-index: 30;
+    display: none;
+}
+
+@keyframes scale{
+    0%
+    {
+        transform: scale(5);
+        filter: blur(50px);
+    }
+
+    50%
+    {
+        filter: blur(0px);
+        transform: scale(1);
+    }
+
+    75%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

@@ -56,6 +56,7 @@ document.addEventListener('keydown', (event) => {
         setFoundKey(true);
         console.log("WIN");
         document.querySelector('.key-stuff').style.display = "block"
+        document.querySelector('.key-success').style.display = "block"; 
         return;
     }
 });
