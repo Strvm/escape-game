@@ -65,6 +65,12 @@ function changeFrame(clueName){
             lastInteraction = '';
             playSound('key-open.mp3');
             setTimeout(function(){goToRoom(getNextRoom(getCurrentRoom()))},2000)
+            document.querySelector('.key-stuff').style.display = "none";
+            document.querySelector('.key-success').style.display = "none"; 
+
+            document.querySelector('.tirebouchon-stuff').style.display = "none";
+            document.querySelector(".tirebouchon-success").style.display = "none";
+
             return;
         }
         return;
@@ -94,6 +100,8 @@ function changeFrame(clueName){
             foundKey = true;
             document.querySelector('.key').style.display = 'none';
             playSound('pick-key.mp3');
+            document.querySelector('.key-stuff').style.display = "block"; 
+            document.querySelector('.key-success').style.display = "block"; 
             img.src = `../images/frames/level-${getRoomId(getCurrentRoom())}/level-${getRoomId(getCurrentRoom())}-nokey.svg`;
             img.onload = function(){ 
             level.style.backgroundImage = `url("${img.src}")`;
@@ -101,7 +109,7 @@ function changeFrame(clueName){
             return;
             }
         }else{
-            document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10';
+            document.querySelector(`.level-${getRoomId(getCurrentRoom())} .keyHide`).style.zIndex = '10'; 
         }
     }else{
         img.onload = function(){ 
@@ -122,6 +130,9 @@ function changeFrame(clueName){
                 case 'room level-2':
                     if (clueName == 'tireBouchon' && isLocked) {
                         isLocked = false;
+                        document.querySelector(".tirebouchon-stuff").style.display = "block"
+                        document.querySelector(".tirebouchon-success").style.display = "block"
+
                     }
                     break;
                 case 'room level-3':
